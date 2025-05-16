@@ -1,6 +1,4 @@
 import { FaStopwatch , FaStar } from "react-icons/fa";
-// import phone from "../assets/phone.png"; // Make sure image exists in src/assets
-// import googleLogo from "../assets/google.png"; // Optional: add google icon
 import phoneImg from '../assets/hero-variant.webp';
 
 const Home = () => {
@@ -10,7 +8,7 @@ const Home = () => {
   <div className="bg-[#214534] text-white h-[861px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20">
 
   {/* TODO:Animate phone using top */}
-  <img src={phoneImg} alt="Phone UI" className="w-[500px] absolute top-[24%] z-0" />
+ <img src={phoneImg} alt="Phone UI" className="w-[500px] absolute top-[2%] md:top-[24%] z-0" />
 
   {/* Overlay Text */}
 <div className="absolute top-[10%] left-1/2 transform -translate-x-1/2 z-10 text-center w-full px-4">
@@ -43,6 +41,7 @@ const Home = () => {
     
     {/* Left: CTA */}
 <div className="flex flex-col items-center md:items-start absolute sm:top-34 md:-top-5 md:left-75 text-center md:text-left">
+
       <button className="bg-[#7cf58f] text-black font-medium px-10 py-4 rounded-full text-lg hover:bg-[#6ee87d] transition text-[18px]">
         Start my approval
       </button>
@@ -54,23 +53,26 @@ const Home = () => {
 
     {/* Right: Google Reviews */}
 
-<div className="flex flex-col items-center md:items-start text-sm px-4 py-3 rounded-xl bg-black bg-opacity-90 md:bg-transparent md:px-0 md:py-0 w-fit mx-auto absolute md:right-90 md:-bottom-10 sm:bottom-55 md:mx-0 mt-8 md:mt-0">
+<div className="flex flex-col items-center text-center text-white bg-black/80 px-4 py-3 rounded-xl 
+  w-fit mx-auto absolute md:bg-transparent md:right-90 md:-bottom-10 sm:bottom-55 mt-8 md:mt-0">
 
-  <div className="flex items-center gap-1">
+  {/* Google icon and stars */}
+  <div className="flex items-center gap-2">
     <img
       src="/src/assets/google-icon-logo-svgrepo-com.svg"
       alt="Google"
-      className="w-5 h-5 sm:w-6 sm:h-6"
+      className="w-6 h-6"
     />
     {[...Array(5)].map((_, i) => (
-      <FaStar key={i} className="text-yellow-400 text-[20px] sm:text-[24px]" />
+      <FaStar key={i} className="text-yellow-400 text-[24px]" />
     ))}
   </div>
 
-  <span className="mt-2 text-sm sm:text-base">4.6 stars | 3177 Google reviews</span>
+  {/* Rating text */}
+  <span className="mt-2 text-[16px] font-light">
+    4.6 stars | 3177 Google reviews
+  </span>
 </div>
-
-
 
 
   </div>
