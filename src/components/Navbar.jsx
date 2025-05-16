@@ -15,7 +15,7 @@ const Navbar = () => {
         {/* Mobile: Call Icon + Continue + Hamburger */}
         <div className="flex items-center gap-3 ml-auto md:hidden">
       <button className="border-2 border-white rounded-full p-2 hover:bg-white hover:text-black transition cursor-pointer">
-      <FaPhone className="w-6 h-6 transform scale-x-[-1]" />
+      <FaPhone className="w-4 h-4 transform scale-x-[-1]" />
       </button>
 
 
