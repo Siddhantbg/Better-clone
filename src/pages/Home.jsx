@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
 
-  <div className="bg-[#214534] text-white h-[861px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20">
+<div className="bg-[#214534] text-white md:min-h-[861px] sm:h-[668px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20">
 
   {/* TODO:Animate phone using top */}
  <img src={phoneImg} alt="Phone UI" className="w-[500px] absolute top-[2%] md:top-[24%] z-0" />
@@ -54,7 +54,7 @@ const Home = () => {
     {/* Right: Google Reviews */}
 
 <div className="flex flex-col items-center text-center text-white bg-black/80 px-4 py-3 rounded-xl 
-  w-fit mx-auto absolute md:bg-transparent md:right-90 md:-bottom-10 sm:bottom-55 mt-8 md:mt-0">
+  w-fit mx-auto absolute md:bg-transparent md:right-90 md:-bottom-13 sm:bottom-15 mt-8 md:mt-0">
 
   {/* Google icon and stars */}
   <div className="flex items-center gap-2">
