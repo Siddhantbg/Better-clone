@@ -15,3 +15,10 @@
   font-size: 24px;
   font-style: normal;
 }
+.geist-uheavy {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 36px;
+  font-style: normal;
+}

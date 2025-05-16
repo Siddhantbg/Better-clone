@@ -60,27 +60,28 @@ const Navbar = () => {
       <div className={`fixed top-0 left-0 h-full w-full z-50 transition-transform duration-300 transform ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="h-full bg-white p-6 flex flex-col gap-6 text-black">
           <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-bold">Better</h2>
+            <h2 className="text-2xl font-bold geist-uheavy">Better</h2>
             <button onClick={() => setMenuOpen(false)} className="text-2xl">
               <FaTimes />
             </button>
           </div>
 
           <div className="flex flex-col gap-4 text-lg mt-8">
-            <Link to="/about" className="border-b pb-2">About Us</Link>
-            <Link to="/calculator" className="border-b pb-2">Mortgage Calculator</Link>
-            <Link to="/start" className="border-b pb-2">Start Page</Link>
+            <Link to="/about" className="geist-light pb-2">About Us</Link>
+            <Link to="/calculator" className="geist-light pb-2">Mortgage Calculator</Link>
+            <Link to="/start" className="geist-light pb-2">Start Page</Link>
           </div>
 
           <div className="bg-[#f0f8f4] text-black rounded-full py-3 px-4 flex items-center gap-3 mt-6">
-          <FaPhone className="w-6 h-6 transform scale-x-[-1]" />
-            <span>Call us anytime at (123)4567890</span>
-          </div>
+  <FaPhone className="w-6 h-6 transform scale-x-[-1] ml-42" />
+  <span className="geist-light">Call us anytime at (123)4567890</span>
+</div>
 
-          <button className="mt-auto w-full bg-[#7cf58f] text-black py-3 rounded-full font-semibold">
+
+          <button className="mt-auto w-full bg-green-400 geist-light text-black py-3 rounded-full font-semibold">
             Continue
           </button>
-          <button className="w-full border border-gray-300 py-3 rounded-full flex justify-center items-center gap-2">
+          <button className="w-full border geist-light border-gray-300 py-3 rounded-full flex justify-center items-center gap-2">
             Sign in <FaUser />
           </button>
         </div>
