@@ -22,11 +22,25 @@
   font-size: 17px;
   font-style: normal;
 }
+.geist-bento {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 22px;
+  font-style: normal;
+}
 .geist-med {
   font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-size: 80px;
+  font-style: normal;
+}
+.geist-med2 {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 40px;
   font-style: normal;
 }
 .geist-imed {

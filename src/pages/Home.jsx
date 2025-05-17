@@ -19,7 +19,7 @@ useEffect(() => {
       setNavbarLight(visible);
     },
     {
-        threshold: 0.57,               
+      threshold: 0.57,               
       rootMargin: '0px 0px -200px'  
     }
   );
@@ -107,7 +107,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-      
+
 {/* Wrapper with background */}
 <div className="bg-[#fdfcf9]">
 
