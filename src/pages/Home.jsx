@@ -87,7 +87,7 @@ const Home = () => {
               {/* Google icon and stars */}
               <div className="flex items-center gap-2">
                 <img
-                  src="/src/assets/google-icon-logo-svgrepo-com.svg"
+                  src="/assets/google-icon-logo-svgrepo-com.svg"
                   alt="Google"
                   className="w-6 h-6"
                 />

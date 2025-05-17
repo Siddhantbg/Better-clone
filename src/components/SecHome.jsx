@@ -1,24 +1,24 @@
 import React from 'react';
 import { useState } from 'react';
-
+import Bentogrid from '../components/BentoGrid'
 const testimonials = {
   Arian: {
     name: 'Arian',
-    image: '/src/assets/arian.webp',
+    image: '/assets/arian.webp',
     quote:
       'The reason why I decided to go with Better is because after I did my research with the other lenders, Better was the ones that provided me with the lowest interest rate.',
     title: 'Better Mortgage customer',
   },
   Amanda: {
     name: 'Amanda',
-    image: '/src/assets/amanda.webp',
+    image: '/assets/amanda.webp',
     quote:
       'Better made the homebuying process incredibly smooth and stress-free. I’m so grateful for their support and transparency.',
     title: 'First-time buyer',
   },
   Paul: {
     name: 'Paul',
-    image: '/src/assets/paul.webp',
+    image: '/assets/paul.webp',
     quote:
       'Getting approved through Better was fast and easy. They gave me the confidence I needed during a competitive market.',
     title: 'Refinance client',
@@ -29,6 +29,7 @@ const SecHome = () => {
   const { image, quote, title, name } = testimonials[selected];
 
   return (
+    <>
     <div className="bg-[#fdfcf9] min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-16 gap-10 md:gap-65">
       <div>
         {/*Image Section */}
@@ -54,6 +55,7 @@ const SecHome = () => {
           ))}
         </div>
 
+      
 
       </div>
 
@@ -76,6 +78,9 @@ const SecHome = () => {
         </div>
       </div>
     </div>
+    bento
+     <Bentogrid/>
+     </>
   );
 };
 
