@@ -2,23 +2,22 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPhone, FaBars, FaTimes, FaUser } from "react-icons/fa";
 
-const Navbar = ({ changeColor } ) => {
+const Navbar = ({ changeColor }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       {/* Desktop + Mobile Nav */}
-<nav className={`sticky top-0 z-50 px-14 py-8 flex items-center justify-between md:justify-normal transition-all duration-300 ${
-  changeColor ? 'bg-[#fdfcf9] text-black' : 'bg-[#214534] text-white'
-}`}>
+      <nav className={`sticky top-0 z-50 px-14 py-8 flex items-center justify-between md:justify-normal transition-all duration-300 ${changeColor ? 'bg-[#fdfcf9] text-black' : 'bg-[#214534] text-white'
+        }`}>
         {/* Logo */}
         <div className="cursor-pointer text-2xl geist-heavy font-bold">Better</div>
 
         {/* Mobile: Call Icon + Continue + Hamburger */}
         <div className="flex items-center gap-3 ml-auto md:hidden">
-      <button className="border-2 border-white rounded-full p-2 hover:bg-white hover:text-black transition cursor-pointer">
-      <FaPhone className="w-4 h-4 transform scale-x-[-1]" />
-      </button>
+          <button className="border-2 border-white rounded-full p-2 hover:bg-white hover:text-black transition cursor-pointer">
+            <FaPhone className="w-4 h-4 transform scale-x-[-1]" />
+          </button>
 
 
           <button className="bg-[#7cf58f] text-black font-semibold px-4 py-2 rounded-full hover:bg-[#6ee87d] transition text-sm">
@@ -75,9 +74,9 @@ const Navbar = ({ changeColor } ) => {
           </div>
 
           <div className="bg-[#f0f8f4] text-black rounded-full py-3 px-4 flex items-center gap-3 mt-6">
-  <FaPhone className="w-6 h-6 transform scale-x-[-1] ml-42" />
-  <span className="geist-light">Call us anytime at (123)4567890</span>
-</div>
+            <FaPhone className="w-6 h-6 transform scale-x-[-1] ml-42" />
+            <span className="geist-light">Call us anytime at (123)4567890</span>
+          </div>
 
 
           <button className="mt-auto w-full bg-green-400 geist-light text-black py-3 rounded-full font-semibold">

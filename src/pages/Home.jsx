@@ -2,39 +2,42 @@ import { FaStopwatch, FaStar } from "react-icons/fa";
 import phoneImg from '../assets/hero-variant.webp';
 import { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
+import BentoGrid from "../components/BentoGrid.jsx";
 import SecHome from '../components/SecHome.jsx';
 
 const Home = () => {
   const testimonialRef = useRef();
   const [navbarLight, setNavbarLight] = useState(false);
 
- useEffect(() => {
+  const bentoRef = useRef(null);
+  const [isBentoVisible, setIsBentoVisible] = useState(false);
+
+useEffect(() => {
   const observer = new IntersectionObserver(
-    ([entry]) => {
-      setNavbarLight(entry.isIntersecting);
+    (entries) => {
+      const visible = entries.some((entry) => entry.isIntersecting);
+      setNavbarLight(visible);
     },
     {
-      root: null,
-      threshold: 0.75, 
-      rootMargin: '0px 0px -100px 0px' 
+        threshold: 0.4,               
+      rootMargin: '0px 0px -200px'  
     }
   );
 
-  if (testimonialRef.current) {
-    observer.observe(testimonialRef.current);
-  }
+  if (testimonialRef.current) observer.observe(testimonialRef.current);
+  if (bentoRef.current) observer.observe(bentoRef.current);
 
   return () => {
-    if (testimonialRef.current) {
-      observer.unobserve(testimonialRef.current);
-    }
+    if (testimonialRef.current) observer.unobserve(testimonialRef.current);
+    if (bentoRef.current) observer.unobserve(bentoRef.current);
   };
 }, []);
 
 
+
   return (
     <>
-      <Navbar changeColor={navbarLight} />
+<Navbar changeColor={navbarLight} />
 
       <div className="bg-[#214534] text-white md:min-h-[861px] sm:h-[668px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20">
 
@@ -104,9 +107,14 @@ const Home = () => {
           </div>
         </div>
       </div>
+      
  <section ref={testimonialRef}>
       <SecHome />
 </section>
+<section ref={bentoRef}>
+        <BentoGrid />
+    </section>
+      
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import Bentogrid from '../components/BentoGrid'
+import BentoGrid from './BentoGrid';
 const testimonials = {
   Arian: {
     name: 'Arian',
@@ -30,6 +30,7 @@ const SecHome = () => {
 
   return (
     <>
+   
     <div className="bg-[#fdfcf9] min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-16 gap-10 md:gap-65">
       <div>
         {/*Image Section */}
@@ -77,9 +78,8 @@ const SecHome = () => {
           <span className="geist- light">out of 5</span>
         </div>
       </div>
-    </div>
-    bento
-     <Bentogrid/>
+   
+    </div>   
      </>
   );
 };
