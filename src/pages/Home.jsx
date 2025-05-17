@@ -19,7 +19,7 @@ useEffect(() => {
       setNavbarLight(visible);
     },
     {
-        threshold: 0.4,               
+        threshold: 0.57,               
       rootMargin: '0px 0px -200px'  
     }
   );
@@ -108,12 +108,21 @@ useEffect(() => {
         </div>
       </div>
       
- <section ref={testimonialRef}>
-      <SecHome />
-</section>
-<section ref={bentoRef}>
-        <BentoGrid />
-    </section>
+{/* Wrapper with background */}
+<div className="bg-[#fdfcf9]">
+
+  {/* Section 1 - Ref must stay here */}
+  <section ref={testimonialRef}>
+    <SecHome />
+  </section>
+
+  {/* Section 2 - Ref must stay here */}
+  <section ref={bentoRef}>
+    <BentoGrid />
+  </section>
+
+</div>
+
       
     </>
   );
