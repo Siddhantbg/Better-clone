@@ -2,13 +2,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPhone, FaBars, FaTimes, FaUser } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ changeColor } ) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       {/* Desktop + Mobile Nav */}
-<nav className="sticky top-0 z-50 bg-[#214534] text-white px-14 py-8 flex items-center justify-between md:justify-normal">
+<nav className={`sticky top-0 z-50 px-14 py-8 flex items-center justify-between md:justify-normal transition-all duration-300 ${
+  changeColor ? 'bg-[#fdfcf9] text-black' : 'bg-[#214534] text-white'
+}`}>
         {/* Logo */}
         <div className="cursor-pointer text-2xl geist-heavy font-bold">Better</div>
 

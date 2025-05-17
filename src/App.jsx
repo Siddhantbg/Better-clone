@@ -10,7 +10,6 @@ import Start from "./pages/Start";
 function App() {
   return (
     <Router>
-      <Navbar />
       <div className="p-0 ">
         <Routes>
           <Route path="/" element={<Home />} />

@@ -8,6 +8,27 @@
   font-size: 16px;
   font-style: normal;
 }
+.geist-wlight {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 17px;
+  font-style: normal;
+}
+.geist-tlight {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 17px;
+  font-style: normal;
+}
+.geist-med {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 80px;
+  font-style: normal;
+}
 .geist-heavy {
   font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
