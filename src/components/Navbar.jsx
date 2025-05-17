@@ -41,7 +41,7 @@ const Navbar = ({ changeColor } ) => {
 
         {/* Desktop Right Section */}
         <div className="hidden md:flex items-center gap-4 ml-auto">
-          <div className="border border-white rounded-full p-2 hover:bg-white hover:text-black transition cursor-pointer">
+          <div className="border border-gray-300 rounded-full p-2 hover:border-white hover:bg-[#f6f6f3] hover:text-black transition cursor-pointer">
             <FaPhone className="w-6 h-6 transform scale-x-[-1]" />
 
           </div>
