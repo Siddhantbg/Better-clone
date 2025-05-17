@@ -2,7 +2,7 @@ import { FaStopwatch, FaStar } from "react-icons/fa";
 import phoneImg from '../assets/hero-variant.webp';
 import { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
-import SecHome from '../components/SecHome';
+import SecHome from '../components/SecHome.jsx';
 
 const Home = () => {
   const testimonialRef = useRef();
