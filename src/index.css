@@ -29,6 +29,13 @@
   font-size: 80px;
   font-style: normal;
 }
+.geist-imed {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  /* font-size: 80px; */
+  font-style: normal;
+}
 .geist-heavy {
   font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
