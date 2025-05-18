@@ -2,16 +2,25 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPhone, FaBars, FaTimes, FaUser } from "react-icons/fa";
 
-const Navbar = ({ changeColor }) => {
+const Navbar = ({ changeColor,variant = "default" }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const isCustom = variant === "light";
 
   return (
     <>
+    {/* //TODO: Navbar fixes and transition changes */}
       {/* Desktop + Mobile Nav */}
-      <nav className={`sticky top-0 z-50 px-14 py-8 flex items-center justify-between md:justify-normal transition-all duration-300 ${changeColor ? 'bg-[#fdfcf9] text-black' : 'bg-[#214534] text-white'
-        }`}>
+        <nav className={`sticky top-0 z-50 px-14 py-8 flex items-center justify-between md:justify-normal transition-all duration-300 ${
+      changeColor
+        ? 'bg-[#fdfcf9] text-black'
+        : variant === 'light'
+          ? 'bg-[#fcfcf9] text-[#1e1e1e]'
+          : 'bg-[#214534] text-white'
+    }`}>
         {/* Logo */}
-        <div className="cursor-pointer text-2xl geist-heavy font-bold">Better</div>
+<Link to="/">
+  <div className="cursor-pointer text-2xl geist-heavy font-bold">Better</div>
+</Link>
 
         {/* Mobile: Call Icon + Continue + Hamburger */}
         <div className="flex items-center gap-3 ml-auto md:hidden">
