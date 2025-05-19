@@ -12,9 +12,9 @@ const Navbar = ({ changeColor,variant = "default" }) => {
       {/* Desktop + Mobile Nav */}
         <nav className={`sticky top-0 z-50 px-14 py-8 flex items-center justify-between md:justify-normal transition-all duration-300 ${
       changeColor
-        ? 'bg-[#fdfcf9] text-black'
+        ? 'bg-white text-black'
         : variant === 'light'
-          ? 'bg-[#fcfcf9] text-[#1e1e1e]'
+          ? 'bg-white text-[#1e1e1e]'
           : 'bg-[#214534] text-white'
     }`}>
         {/* Logo */}
