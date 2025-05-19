@@ -1,6 +1,10 @@
+
 const MortgageFormula = () => {
     return (
-        <section className="bg-[#fdfcf9] px-6 geist-modify md:px-20 py-16 text-[#1e1e1e]">
+<>
+
+<section className="bg-[#fefdfa] px-6 geist-modify md:px-20 py-16 text-[#1e1e1e]">
+
             <div className="max-w-6xl mx-auto">
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -51,6 +55,7 @@ const MortgageFormula = () => {
                 </p>
             </div>
         </section>
+        </>
     );
 };
 

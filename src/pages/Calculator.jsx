@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Footer from './Footer'
 import Navbar from '../components/Navbar';
 import MortgageFormula from '../components/MotagageFormula';
+import Mortgage from "../components/MortgageText"
 
 const Calculator = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -12,7 +13,9 @@ const Calculator = () => {
       {/* //TODO:Add white color to Navbar */}
 
       <Navbar variant="light" changeColor={false} />
+      <hr className="w-[77rem] max-w-full mx-auto border-t mt-10 border-[#d3d3d3]" />
 
+<Mortgage/>
 <hr className="w-[77rem] max-w-full mx-auto border-t border-[#d3d3d3]" />
 <MortgageFormula/>
 <hr className="w-[77rem] max-w-full mx-auto border-t border-[#d3d3d3]" />
