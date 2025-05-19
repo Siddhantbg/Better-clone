@@ -24,7 +24,7 @@ const Navbar = ({ changeColor,variant = "default" }) => {
 
         {/* Mobile: Call Icon + Continue + Hamburger */}
         <div className="flex items-center gap-3 ml-auto md:hidden">
-          <button className="border-2 border-white rounded-full p-2 hover:bg-white hover:text-black transition cursor-pointer">
+          <button className="border-2 border-white rounded-full p-2 hover:bg-[#f6f6f3] hover:text-black transition cursor-pointer">
             <FaPhone className="w-4 h-4 transform scale-x-[-1]" />
           </button>
 
@@ -42,9 +42,9 @@ const Navbar = ({ changeColor,variant = "default" }) => {
 
         {/* Center Nav (Desktop only) */}
         <div className="hidden md:flex gap-10 ml-20 text-sm geist-light font-medium">
-          <Link to="/about" className="px-6 py-3 rounded-full hover:bg-white hover:text-[#1c3b2d] transition">About Us</Link>
-          <Link to="/calculator" className="px-6 py-3 rounded-full hover:bg-white hover:text-[#1c3b2d] transition">Mortgage Calculator</Link>
-          <Link to="/start" className="px-6 py-3 rounded-full hover:bg-white hover:text-[#1c3b2d] transition">Start Page</Link>
+          <Link to="/about" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#1c3b2d] transition">About Us</Link>
+          <Link to="/calculator" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#1c3b2d] transition">Mortgage Calculator</Link>
+          <Link to="/start" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#1c3b2d] transition">Start Page</Link>
         </div>
 
         {/* Desktop Right Section */}
