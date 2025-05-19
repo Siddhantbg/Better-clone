@@ -4,6 +4,7 @@ import Footer from './Footer';
 import { PlayCircle } from "lucide-react";
 import Timelin from '../components/Timelin'
 
+
 const About = () => {
   const [showVideo, setShowVideo] = useState(false);
 

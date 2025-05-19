@@ -1,6 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-// Import your pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Calculator from "./pages/Calculator";
