@@ -38,10 +38,14 @@ useEffect(() => {
   return (
     <>
 <Navbar changeColor={navbarLight} />
-<div className="bg-[#214534] text-white h-[627px] md:min-h-[861px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20">
-  
-  {/* Phone Image */}
-  <img src={phoneImg} alt="Phone UI" className="md:w-[500px] absolute top-[21.7%] md:top-[24%] z-0" />
+<div className="bg-[#214534] text-white min-h-[700px] md:min-h-[861px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20 overflow-hidden">
+
+  {/* ✅ Phone Image – responsive positioning */}
+  <img
+    src={phoneImg}
+    alt="Phone UI"
+    className="w-[402px] sm:w-[320px] md:w-[500px] absolute top-[25%] ml-5 sm:top-[28%] md:top-[24%] left-1/2 transform -translate-x-1/2 z-0"
+  />
 
   {/* Overlay Text */}
   <div className="absolute top-[10%] left-1/2 transform -translate-x-1/2 z-10 text-center w-full px-4">
