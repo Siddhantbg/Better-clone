@@ -102,7 +102,7 @@ const BentoGrid = () => {
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
-                                    className={`px-6 py-3 whitespace-nowrap rounded-full border text-sm font-extrabold transition ${activeTab === tab
+                                    className={`px-5 py-3 whitespace-nowrap rounded-full border text-sm font-extrabold transition ${activeTab === tab
                                             ? "border-[#2f6c45] border-3 geist-wlight text-[#2f6c45] bg-white"
                                             : "border-gray-300 text-black bg-white geist-wlight hover:border-[#2f6c45] hover:text-[#2f6c45] hover:border-3"
                                         }`}
@@ -122,7 +122,7 @@ const BentoGrid = () => {
                     {cards.map((card, idx) => {
                         // 🔲 Grid column span logic
                         let colSpan = "col-span-2";
-                        if (idx === 1 || idx === 2) colSpan = "col-span-4";
+                        if (idx === 1 || idx === 2) colSpan = "sm:col-span-4";
 
                         // 📐 Layout type logic
                         const isHorizontalLayout = idx === 1 || idx === 2;
