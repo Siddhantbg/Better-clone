@@ -38,16 +38,16 @@ useEffect(() => {
   return (
     <>
 <Navbar changeColor={navbarLight} />
-<div className="bg-[#214534] text-white h-[727px] md:min-h-[861px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20">
+<div className="bg-[#214534] text-white h-[627px] md:min-h-[861px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20">
   
   {/* Phone Image */}
-  <img src={phoneImg} alt="Phone UI" className="w-[500px] absolute top-[10%] md:top-[24%] z-0" />
+  <img src={phoneImg} alt="Phone UI" className="md:w-[500px] absolute top-[21.7%] md:top-[24%] z-0" />
 
   {/* Overlay Text */}
   <div className="absolute top-[10%] left-1/2 transform -translate-x-1/2 z-10 text-center w-full px-4">
     {/* 💻 Desktop */}
     <div className="hidden md:block">
-      <h1 className="text-green-400 text-[112px] font-bold leading-tight">
+      <h1 className="text-green-400 text-[122px] md:text-[112px] font-bold leading-tight">
         Mortgages
       </h1>
       <h1 className="text-green-400 text-[112px] font-bold leading-tight -mt-5">
@@ -57,8 +57,8 @@ useEffect(() => {
 
     {/* 📱 Mobile */}
     <div className="block md:hidden">
-      <h1 className="text-green-400 text-[30px] sm:text-[48px] font-bold leading-tight">
-        Mortgages made simple
+      <h1 className="text-green-400 text-[50px] relative bottom-10 font-bold leading-tight">
+        Mortgages <br />made simple
       </h1>
     </div>
   </div>
@@ -68,7 +68,7 @@ useEffect(() => {
     <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
       
       {/* ✅ CTA Button block */}
-      <div className="flex flex-col items-center md:items-start absolute top-32 sm:top-34 md:-top-5 md:left-72 text-center md:text-left">
+      <div className="flex flex-col items-center md:items-start absolute top-47.5 md:-top-5 md:left-72 text-center md:text-left">
         <button className="bg-[#7cf58f] text-black font-medium px-10 py-4 rounded-full text-lg hover:bg-[#6ee87d] transition text-[18px]">
           Start my approval
         </button>
@@ -80,7 +80,7 @@ useEffect(() => {
 
       {/* ✅ Google Review block */}
       <div className="flex flex-col items-center text-center text-white bg-black/80 px-4 py-3 rounded-xl 
-        w-fit mx-auto absolute bottom-10 right-23 sm:bottom-15 md:bg-transparent md:right-90 md:-bottom-13 mt-8 md:mt-0">
+        w-fit mx-auto absolute bottom-3 right-12 sm:bottom-15 md:bg-transparent md:right-90 md:-bottom-13 mt-8 md:mt-0">
         
         <div className="flex items-center gap-2">
           <img
