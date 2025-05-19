@@ -3,6 +3,7 @@ import Footer from './Footer'
 import { FaPhone } from "react-icons/fa";
 import Middle from '../components/Middle';
 import Cards from '../components/Cards';
+import { Link } from "react-router-dom";
 
 const Start = () => {
   return (
@@ -11,11 +12,12 @@ const Start = () => {
       <div className="bg-[#fdfcf9] py-6 px-4 border-t border-[#e8f2ec] relative">
   <div className="max-w-6xl mx-auto flex items-center justify-between">
     {/* Left Section: Logo */}
+     <Link to="/">
     <div>
       <h4 className="font-bold text-[#2f6c45] geist-modify text-lg">Better</h4>
       <p className="text-gray-600 geist-modify -mt-1 text-lg">Mortgage</p>
     </div>
-
+</Link>
     {/* Right Section: Phone */}
      <div className="flex items-center gap-3">
       {/* Phone Button */}
