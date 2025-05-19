@@ -13,24 +13,29 @@ const Home = () => {
   const [isBentoVisible, setIsBentoVisible] = useState(false);
 
   const heroRef = useRef();
-
 useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
-      const isHeroVisible = entries.some(
-        (entry) => entry.target.id === 'heroSection' && entry.isIntersecting
-      );
-      setNavbarLight(!isHeroVisible); // 💡 Invert logic: navbar is light when hero is not visible
+      const visibleSections = entries
+        .filter((entry) => entry.isIntersecting)
+        .map((entry) => entry.target.id);
+
+      if (visibleSections.includes("heroSection")) {
+        setNavbarLight(false); // green navbar
+      } else {
+        setNavbarLight(true); // light navbar
+      }
     },
     {
-      threshold: 0.4,
+      threshold: 0.2, // lowered threshold for better small screen detection
     }
   );
 
-  if (heroRef.current) observer.observe(heroRef.current);
+  const sections = [heroRef.current, testimonialRef.current, bentoRef.current];
+  sections.forEach((section) => section && observer.observe(section));
 
   return () => {
-    if (heroRef.current) observer.unobserve(heroRef.current);
+    sections.forEach((section) => section && observer.unobserve(section));
   };
 }, []);
 
