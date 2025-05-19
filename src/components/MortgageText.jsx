@@ -20,7 +20,7 @@ const CalculatorHelp = () => {
     </section>
           <hr className="w-[77rem] max-w-full mx-auto border-t mt-10 border-[#d3d3d3]" />
 
-         <section className="bg-[#fdfcf9] geist-modify px-6 md:px-20 py-16 text-[#1e1e1e]">
+         <section className="bg-[#fefdfa] geist-modify px-6 md:px-20 py-16 text-[#1e1e1e]">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold mb-6">

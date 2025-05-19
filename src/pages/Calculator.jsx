@@ -3,7 +3,8 @@ import Footer from './Footer'
 import Navbar from '../components/Navbar';
 import MortgageFormula from '../components/MotagageFormula';
 import Mortgage from "../components/MortgageText"
-
+import LogicMor from '../components/LogicMor'
+import Logic from '../components/Logic'
 const Calculator = () => {
   const [showVideo, setShowVideo] = useState(false);
 
@@ -13,12 +14,17 @@ const Calculator = () => {
       {/* //TODO:Add white color to Navbar */}
 
       <Navbar variant="light" changeColor={false} />
-      <hr className="w-[77rem] max-w-full mx-auto border-t mt-10 border-[#d3d3d3]" />
+      <div className='bg-[#fefdfa]'>
+       <LogicMor />
+        <Logic/>
 
-<Mortgage/>
-<hr className="w-[77rem] max-w-full mx-auto border-t border-[#d3d3d3]" />
-<MortgageFormula/>
-<hr className="w-[77rem] max-w-full mx-auto border-t border-[#d3d3d3]" />
+        <hr className="w-[77rem] max-w-full mx-auto border-t mt-10 border-[#d3d3d3]" />
+        <Mortgage />
+        <hr className="w-[77rem] max-w-full mx-auto border-t border-[#d3d3d3]" />
+        <MortgageFormula />
+      </div>
+
+      <hr className="w-[77rem] max-w-full mx-auto border-t border-[#d3d3d3]" />
 
       <section className="bg-[#fefdfa] px-6 md:px-20 py-16 text-[#1e1e1e]">
         <div className="max-w-5xl mx-auto">
