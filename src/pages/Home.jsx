@@ -14,28 +14,41 @@ const Home = () => {
 
   const heroRef = useRef();
 useEffect(() => {
+ const handleScroll = () => {
+  const hero = heroRef.current;
+  if (hero) {
+    const rect = hero.getBoundingClientRect();
+
+    // Adjust based on screen size
+    const isDesktop = window.innerWidth >= 1024;
+
+    const isHeroVisible = isDesktop
+      ? rect.bottom > window.innerHeight * 0.1   // desktop: more of hero must scroll out
+      : rect.bottom > window.innerHeight * 0.15; // mobile/tablet: already working well
+
+    setNavbarLight(!isHeroVisible);
+  }
+};
+
+
+  // Observe sections for broader accuracy
   const observer = new IntersectionObserver(
     (entries) => {
-      const visibleSections = entries
-        .filter((entry) => entry.isIntersecting)
-        .map((entry) => entry.target.id);
-
-      if (visibleSections.includes("heroSection")) {
-        setNavbarLight(false); // green navbar
-      } else {
-        setNavbarLight(true); // light navbar
-      }
+      handleScroll(); // fallback check on observer change
     },
-    {
-      threshold: 0.2, // lowered threshold for better small screen detection
-    }
+    { threshold: 0 }
   );
 
-  const sections = [heroRef.current, testimonialRef.current, bentoRef.current];
-  sections.forEach((section) => section && observer.observe(section));
+  if (heroRef.current) observer.observe(heroRef.current);
+  if (testimonialRef.current) observer.observe(testimonialRef.current);
+  if (bentoRef.current) observer.observe(bentoRef.current);
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // initialize once
 
   return () => {
-    sections.forEach((section) => section && observer.unobserve(section));
+    window.removeEventListener("scroll", handleScroll);
+    observer.disconnect();
   };
 }, []);
 
