@@ -79,7 +79,8 @@ const BentoGrid = () => {
 
     return (
         <>
-            <div className="bg-[#fdfcf9] ml-5 px-4 md:px-10 py-8">
+            <div className="bg-[#fdfcf9] px-4 sm:px-6 md:px-10 py-8 overflow-x-hidden">
+
                 {/* Tabs */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4 md:gap-8 px-4 md:px-0">
                     {/* Left: Headline text */}
@@ -93,26 +94,30 @@ const BentoGrid = () => {
                     </div>
 
                     {/* Right: Tab Buttons */}
-                    <div className="flex space-x-4 md:mt-0 mt-4">
-                        {tabs.map((tab) => (
-                            <button
-                                key={tab}
-                                onClick={() => setActiveTab(tab)}
-                                className={`px-6 py-3 rounded-full border text-sm font-extrabold transition ${activeTab === tab
-                                    ? "border-[#2f6c45] border-3 geist-wlight text-[#2f6c45] bg-white"
-                                    : "border-gray-300 text-black bg-white geist-wlight hover:border-[#2f6c45] hover:text-[#2f6c45] hover:border-3"
-                                    }`}
-                            >
-
-                                {tab}
-                            </button>
-                        ))}
+                    <div
+                        className="flex md:space-x-4 mt-4 md:mt-0 overflow-x-auto scrollbar-transition group"
+                    >
+                        <div className="flex space-x-4 min-w-max px-1">
+                            {tabs.map((tab) => (
+                                <button
+                                    key={tab}
+                                    onClick={() => setActiveTab(tab)}
+                                    className={`px-6 py-3 whitespace-nowrap rounded-full border text-sm font-extrabold transition ${activeTab === tab
+                                            ? "border-[#2f6c45] border-3 geist-wlight text-[#2f6c45] bg-white"
+                                            : "border-gray-300 text-black bg-white geist-wlight hover:border-[#2f6c45] hover:text-[#2f6c45] hover:border-3"
+                                        }`}
+                                >
+                                    {tab}
+                                </button>
+                            ))}
+                        </div>
                     </div>
+
                 </div>
 
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 auto-rows-auto">
 
                     {cards.map((card, idx) => {
                         // 🔲 Grid column span logic
@@ -156,7 +161,7 @@ const BentoGrid = () => {
                                             <img
                                                 src={card.image}
                                                 alt={card.title}
-                                                className={`rounded-lg mx-auto ${isHorizontalLayout ? "w-[300px] h-[260px]" : "w-[340px] h-[130px]"} ${(activeTab === "Our Products" || activeTab === "Guides & FAQs")
+                                                className={`rounded-lg mx-auto w-full max-w-[300px] h-auto ${isHorizontalLayout ? "w-[300px] h-[260px]" : "w-[340px] h-[130px]"} ${(activeTab === "Our Products" || activeTab === "Guides & FAQs")
                                                     ? "object-cover"
                                                     : "object-contain"}`}
                                             />
@@ -171,7 +176,7 @@ const BentoGrid = () => {
             </div>
             <div>
                 <hr className="text-[#d3d3d3]" />
-<Footer/>
+                <Footer />
             </div>
         </>
     );

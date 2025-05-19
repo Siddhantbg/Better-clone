@@ -92,3 +92,21 @@
   }
   
 }
+
+/* Smooth transition of scrollbar appearance */
+.scrollbar-transition {
+  scrollbar-width: thin;
+  scrollbar-color: #a0aec0 transparent; /* Optional color styling */
+}
+
+/* Hide by default */
+.scrollbar-transition::-webkit-scrollbar {
+  height: 0px;
+  transition: height 0.3s ease;
+}
+
+/* Show only when actively scrolling (via hover or focus-within) */
+.group:hover .scrollbar-transition::-webkit-scrollbar,
+.group:focus-within .scrollbar-transition::-webkit-scrollbar {
+  height: 6px;
+}
