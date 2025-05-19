@@ -12,33 +12,36 @@ const Home = () => {
   const bentoRef = useRef(null);
   const [isBentoVisible, setIsBentoVisible] = useState(false);
 
+  const heroRef = useRef();
+
 useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
-      const visible = entries.some((entry) => entry.isIntersecting);
-      setNavbarLight(visible);
+      const isHeroVisible = entries.some(
+        (entry) => entry.target.id === 'heroSection' && entry.isIntersecting
+      );
+      setNavbarLight(!isHeroVisible); // 💡 Invert logic: navbar is light when hero is not visible
     },
     {
-      threshold: 0.57,               
-      rootMargin: '0px 0px -200px'  
+      threshold: 0.4,
     }
   );
 
-  if (testimonialRef.current) observer.observe(testimonialRef.current);
-  if (bentoRef.current) observer.observe(bentoRef.current);
+  if (heroRef.current) observer.observe(heroRef.current);
 
   return () => {
-    if (testimonialRef.current) observer.unobserve(testimonialRef.current);
-    if (bentoRef.current) observer.unobserve(bentoRef.current);
+    if (heroRef.current) observer.unobserve(heroRef.current);
   };
 }, []);
-
 
 
   return (
     <>
 <Navbar changeColor={navbarLight} />
-<div className="bg-[#214534] text-white min-h-[700px] md:min-h-[861px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20 overflow-hidden">
+<div 
+  ref={heroRef}
+  id="heroSection"
+className="bg-[#214534] text-white min-h-[700px] md:min-h-[861px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20 overflow-hidden">
 
   {/* ✅ Phone Image – responsive positioning */}
   <img
@@ -104,23 +107,21 @@ useEffect(() => {
   </div>
 </div>
 
-
 {/* Wrapper with background */}
 <div className="bg-[#fdfcf9]">
 
   {/* Section 1 - Ref must stay here */}
-  <section ref={testimonialRef}>
-    <SecHome />
-  </section>
+ <section ref={testimonialRef} id="secHome">
+  <SecHome />
+</section>
 
-  {/* Section 2 - Ref must stay here */}
-  <section ref={bentoRef}>
-    <BentoGrid />
-  </section>
+<section ref={bentoRef} id="bentoGrid">
+  <BentoGrid />
+</section>
+
 
 </div>
 
-      
     </>
   );
 };

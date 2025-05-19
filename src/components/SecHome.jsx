@@ -30,6 +30,7 @@ const SecHome = () => {
 
   return (
     <>
+    
  <div className="bg-[#fdfcf9] min-h-screen flex geist-modify flex-col-reverse md:flex-row items-center justify-center px-6 py-16 gap-10 md:gap-24">
 
   {/* Image Section */}

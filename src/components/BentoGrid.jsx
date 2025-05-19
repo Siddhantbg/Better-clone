@@ -79,6 +79,7 @@ const BentoGrid = () => {
 
     return (
         <>
+
             <div className="bg-[#fdfcf9] px-4 sm:px-6 md:px-10 py-8 overflow-x-hidden">
 
                 {/* Tabs */}
@@ -103,8 +104,8 @@ const BentoGrid = () => {
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
                                     className={`px-5 py-3 whitespace-nowrap rounded-full border text-sm font-extrabold transition ${activeTab === tab
-                                            ? "border-[#2f6c45] border-3 geist-wlight text-[#2f6c45] bg-white"
-                                            : "border-gray-300 text-black bg-white geist-wlight hover:border-[#2f6c45] hover:text-[#2f6c45] hover:border-3"
+                                        ? "border-[#2f6c45] border-3 geist-wlight text-[#2f6c45] bg-white"
+                                        : "border-gray-300 text-black bg-white geist-wlight hover:border-[#2f6c45] hover:text-[#2f6c45] hover:border-3"
                                         }`}
                                 >
                                     {tab}
