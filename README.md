@@ -57,7 +57,7 @@ http://localhost:5173
 ## 📦 Deployment
 This project is deployed via Vercel.
 
-📎 Live URL: [BetterClone-Siddhant.com]https://better-clone-eight.vercel.app/
+📎 Live URL: [BetterClone-Siddhant.com](https://better-clone-eight.vercel.app/)
 
 ---
 🤝 Credits
