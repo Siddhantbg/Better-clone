@@ -18,12 +18,15 @@ const BreakdownBar = () => {
   ];
 
   return (
-    <section className="bg-[#fefdfa] px-6 md:px-20 py-16 text-[#1e1e1e]">
-      <h3 className="text-xl font-medium mb-2">Monthly payment breakdown</h3>
-      <h2 className="text-3xl font-bold mb-6">${total.toFixed(2)}/mo</h2>
+    <section className="bg-[#fefdfa] px-6 geist-modify md:px-20 py-16 text-[#1e1e1e]">
+  <h3 className="text-xl font-medium mb-2">Monthly payment breakdown</h3>
+  <h2 className="text-3xl font-bold mb-6">${total.toFixed(2)}/mo</h2>
 
-      {/* Visual Bar */}
-      <div className="flex h-14 overflow-hidden rounded-full mb-8">
+  {/* Responsive Flex Layout: Bar + Labels + Inputs */}
+  <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 mb-10">
+    {/* Visual Bar */}
+    <div className="flex-1">
+      <div className="flex h-14 overflow-hidden rounded-full">
         {segments.map((seg, i) => (
           <div
             key={i}
@@ -38,50 +41,48 @@ const BreakdownBar = () => {
           ></div>
         ))}
       </div>
+    </div>
 
-      {/* Labels + Inputs */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          {segments.map((seg, i) => (
-            <div key={i} className="flex items-center gap-3">
-              <div className={`w-2 h-6 rounded-sm ${seg.color}`}></div>
-              <p className="text-gray-700 text-sm">{seg.label}</p>
-            </div>
-          ))}
+    {/* Labels + Inputs */}
+    <div className="grid grid-cols-1 gap-4 w-full md:w-[350px]">
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-6 rounded-sm bg-[#1f4637]"></div>
+          <span className="text-sm text-[#1e1e1e]">Principal & interest</span>
         </div>
-
-        <div className="space-y-4">
-          <p className="text-right font-semibold">${principal.toFixed(2)}</p>
-          <input
-            type="number"
-            className="w-full p-2 border rounded-lg"
-            value={taxes}
-            onChange={(e) => setTaxes(+e.target.value)}
-          />
-          <input
-            type="number"
-            className="w-full p-2 border rounded-lg border-green-700"
-            value={insurance}
-            onChange={(e) => setInsurance(+e.target.value)}
-          />
-          <input
-            type="number"
-            className="w-full p-2 border rounded-lg"
-            value={hoa}
-            onChange={(e) => setHOA(+e.target.value)}
-          />
-          <input
-            type="number"
-            className="w-full p-2 border rounded-lg"
-            value={utilities}
-            onChange={(e) => setUtilities(+e.target.value)}
-          />
-          <button className="bg-[#f3f9f5] mt-4 px-6 py-3 rounded-lg font-medium w-full">
-            Copy estimate link
-          </button>
-        </div>
+        <p className="font-semibold">${principal.toFixed(2)}</p>
       </div>
-    </section>
+
+      {[
+        { label: "Property taxes", value: taxes, setter: setTaxes, color: "bg-purple-800" },
+        { label: "Homeowners insurance", value: insurance, setter: setInsurance, color: "bg-pink-200" },
+        { label: "HOA fees", value: hoa, setter: setHOA, color: "bg-yellow-300" },
+        { label: "Utilities", value: utilities, setter: setUtilities, color: "bg-orange-400" },
+      ].map((item, i) => (
+        <div key={i} className="flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <div className={`w-2 h-6 rounded-sm ${item.color}`}></div>
+            <span className="text-sm text-[#1e1e1e]">{item.label}</span>
+          </div>
+          <div className="flex items-center border rounded-lg px-2 py-3 w-33">
+            <span className="text-sm text-gray-700">$</span>
+            <input
+              type="number"
+              className="w-full outline-none bg-transparent pl-1 text-sm"
+              value={item.value}
+              onChange={(e) => item.setter(+e.target.value)}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <button className="bg-[#f1f7f1] mt-4 md:ml-227 px-8 py-5 rounded-lg font-medium">
+    Copy estimate link
+  </button>
+</section>
+
   );
 };
 
