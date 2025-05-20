@@ -26,7 +26,7 @@ const Start = () => {
               </button>
 
               {/* Call Text */}
-              <p className="text-[#1e1e1e] text-base">
+              <p className="text-[#1e1e1e] text-sm md:text-base">
                 Need help? Call <span className="font-medium">(415) 523-8837</span>
               </p>
             </div>

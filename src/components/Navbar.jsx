@@ -2,25 +2,24 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPhone, FaBars, FaTimes, FaUser } from "react-icons/fa";
 
-const Navbar = ({ changeColor,variant = "default" }) => {
+const Navbar = ({ changeColor, variant = "default" }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const isCustom = variant === "light";
 
   return (
     <>
-    {/* //TODO: Navbar fixes and transition changes */}
+      {/* //TODO: Navbar fixes and transition changes */}
       {/* Desktop + Mobile Nav */}
-        <nav className={`sticky top-0 z-50 px-14 py-8 flex items-center justify-between md:justify-normal transition-all duration-300 ${
-      changeColor
-        ? 'bg-white text-black'
-        : variant === 'light'
-          ? 'bg-white text-[#1e1e1e]'
-          : 'bg-[#214534] text-white'
-    }`}>
+      <nav className={`sticky top-0 z-50 px-14 py-8 flex items-center justify-between md:justify-normal transition-all duration-300 ${changeColor
+          ? 'bg-white text-black'
+          : variant === 'light'
+            ? 'bg-white text-[#1e1e1e]'
+            : 'bg-[#214534] text-white'
+        }`}>
         {/* Logo */}
-<Link to="/">
-  <div className="cursor-pointer text-2xl geist-heavy font-bold">Better</div>
-</Link>
+        <Link to="/">
+          <div className="cursor-pointer text-2xl geist-heavy font-bold">Better</div>
+        </Link>
 
         {/* Mobile: Call Icon + Continue + Hamburger */}
         <div className="flex items-center gap-3 ml-auto md:hidden">
@@ -34,10 +33,12 @@ const Navbar = ({ changeColor,variant = "default" }) => {
           </button>
           <button
             onClick={() => setMenuOpen(true)}
-            className="text-white text-xl"
+            className={`text-xl transition ${changeColor || variant === 'light' ? 'text-black' : 'text-white'
+              }`}
           >
             <FaBars />
           </button>
+
         </div>
 
         {/* Center Nav (Desktop only) */}
@@ -76,19 +77,38 @@ const Navbar = ({ changeColor,variant = "default" }) => {
             </button>
           </div>
 
-          <div className="flex flex-col gap-4 text-lg mt-8">
-            <Link to="/about" className="geist-light pb-2">About Us</Link>
-            <Link to="/calculator" className="geist-light pb-2">Mortgage Calculator</Link>
-            <Link to="/start" className="geist-light pb-2">Start Page</Link>
-          </div>
+         <div className="flex flex-col gap-4 text-lg mt-8">
+  <Link
+    to="/about"
+    className="geist-light pb-2 active:bg-[#f6f6f3] px-4 py-2 rounded-md flex items-center justify-between"
+  >
+    About Us
+    <img src="/assets/right-arrow-svgrepo-com.svg" className="h-3" alt="arrow" />
+  </Link>
+  <Link
+    to="/calculator"
+    className="geist-light pb-2 active:bg-[#f6f6f3] px-4 py-2 rounded-md flex items-center justify-between"
+  >
+    Mortgage Calculator
+    <img src="/assets/right-arrow-svgrepo-com.svg" className="h-3" alt="arrow" />
+  </Link>
+  <Link
+    to="/start"
+    className="geist-light pb-2 active:bg-[#f6f6f3] px-4 py-2 rounded-md flex items-center justify-between"
+  >
+    Start Page
+    <img src="/assets/right-arrow-svgrepo-com.svg" className="h-3" alt="arrow" />
+  </Link>
+</div>
+
 
           <div className="bg-[#f0f8f4] text-black rounded-full py-3 px-4 flex items-center gap-3 mt-6">
-            <FaPhone className="w-6 h-6 transform scale-x-[-1] ml-42" />
+            <FaPhone className="w-6 h-6 transform scale-x-[-1] ml-3 md:ml-42" />
             <span className="geist-light">Call us anytime at (123)4567890</span>
           </div>
 
 
-          <button className="mt-auto w-full bg-green-400 geist-light text-black py-3 rounded-full font-semibold">
+          <button className="mt-auto w-full bg-green-700 geist-light text-white py-3 rounded-full font-semibold">
             Continue
           </button>
           <button className="w-full border geist-light border-gray-300 py-3 rounded-full flex justify-center items-center gap-2">
