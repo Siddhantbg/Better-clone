@@ -253,11 +253,10 @@ const Footer = () => {
             service marks, trade names, logos, icons, and domain names are proprietary to Better Home & Finance
             Holding Company. Better Home & Finance Holding Company trademarks are federally registered with the
             U.S. Patent and Trademark Office. Better Cover is a registered trademark with the U.S. Patent and
-            Trademark Office and is owned by Better Cover, LLC.
+            Trademark Office and is owned by Better Cover, LLC. &copy;Siddhant Bhagat
           </p>
         </div>
       </div>
-      &copy;Siddhant Bhagat
     </div>
   )
 }
