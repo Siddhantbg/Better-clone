@@ -1,6 +1,6 @@
 # 🏡 Better Mortgage UI Clone
 
-A responsive, clean UI clone of the [Better.com](https://better-take-home.vercel.app) homepage. Built with React, Tailwind CSS, and React Router, this project mimics the design, bento grid structure, and functional flow of the Better.com take-home assignment.
+Hi I am Siddhant Bhaagt this is a responsive, clean UI clone of the [Better.com](https://better-take-home.vercel.app) homepage. Built with React, Tailwind CSS, and React Router, this project mimics the design, bento grid structure, and functional flow of the Better.com take-home assignment.
 
 ---
 
@@ -41,8 +41,8 @@ bash
 Copy
 Edit
 # 1. Clone the repo
-git clone https://github.com/your-username/better-ui-clone.git
-cd better-ui-clone
+git clone https://github.com/siddhantbg/Better-clone.git
+cd Better-clone
 
 # 2. Install dependencies
 npm install
@@ -53,11 +53,13 @@ npm run dev
 # 4. Open in your browser
 http://localhost:5173
 
-📦 Deployment
+---
+## 📦 Deployment
 This project is deployed via Vercel.
 
-📎 Live URL: https://better-clone-eight.vercel.app/
+📎 Live URL: [BetterClone-Siddhant.com]https://better-clone-eight.vercel.app/
 
+---
 🤝 Credits
 Built as part of a assignment for Tellis Technologies Private Limited for position Front End Developer internship to demonstrate UI/UX skills using modern frontend tools.
 
