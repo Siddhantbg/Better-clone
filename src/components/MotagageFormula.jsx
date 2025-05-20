@@ -26,7 +26,7 @@ const MortgageFormula = () => {
                 </p>
 
                 {/* Formula Box */}
-                <div className="bg-[#f8f8f5] rounded-xl px-6 py-8 text-center text-green-800 font-medium text-lg mx-auto max-w-3xl mb-10">
+                <div className="bg-[#f8f8f5] rounded-xl md:px-6 py-8 text-center text-green-800 font-medium text-lg mx-auto max-w-3xl mb-10">
 
                     <div>
                         <img src="/assets/formula 1.webp" alt="Formula" />
@@ -34,15 +34,15 @@ const MortgageFormula = () => {
                 </div>
 
                 {/* Explanation */}
-               <div className="text-gray-800 mb-6 ml-50 mx-auto max-w-xl">
-  <p className="mb-4 mr-106 font-medium text-[#767674]">Where:</p>
+               <div className="text-gray-800 mb-6 md:ml-50 mx-auto max-w-xl">
+  <p className="md:mb-4 md:mr-106 font-medium text-[#767674] ">Where:</p>
   <ul className="list-disc list-inside space-y-2 text-left ml-7 text-[#545553] inline-block">
     <li><strong>M</strong> is monthly mortgage payments</li>
     <li><strong>P</strong> is the principal loan amount (the amount you borrow)</li>
     <li><strong>r</strong> is the monthly interest rate</li>
     <li><strong>n</strong> is the total number of payments in months</li>
   </ul>
-<p className="text-[#767674] font-medium mr-70 mt-4">Here's a simple example:</p>
+<p className="text-[#767674] font-medium md:mr-70 mt-4">Here's a simple example:</p>
 </div>
                
                 <div className="bg-[#f8faf9] max-w-5xl mx-auto rounded-xl p-6 flex flex-col md:flex-row justify-center gap-8 text-green-800 text-sm mb-2">

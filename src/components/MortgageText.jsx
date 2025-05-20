@@ -40,7 +40,7 @@ const CalculatorHelp = () => {
         </p>
 
         {/* Formula Title */}
-        <h3 className="text-xl font-semibold text-[#545553] ml-52 mb-4">
+        <h3 className="text-xl text-[#545553] md:ml-52 mb-4">
           Formula for calculating your debt-to-income (DTI) ratio:
         </h3>
 
@@ -55,7 +55,7 @@ const CalculatorHelp = () => {
 
 
         {/* Example Heading */}
-        <h3 className="text-lg ml-53 font-medium text-[#545553] mb-4">
+        <h3 className="text-lg md:ml-53 font-medium text-[#545553] mb-4">
           Here's an example of what calculating your DTI might look like:
         </h3>
 
