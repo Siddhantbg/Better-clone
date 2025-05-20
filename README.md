@@ -15,6 +15,16 @@ Hi I am Siddhant Bhaagt this is a responsive, clean UI clone of the [Better.com]
 - ✅ Mobile hamburger menu with slide-in overlay
 
 ---
+## 📦 Deployment
+This project is deployed via Vercel.
+
+📎 Live URL: [BetterClone-Siddhant.com](https://better-clone-eight.vercel.app/)
+
+---
+🤝 Credits
+Built as part of a assignment for Tellis Technologies Private Limited for position Front End Developer internship to demonstrate UI/UX skills using modern frontend tools.
+
+---
 
 ## 🛠️ Tech Stack
 
@@ -52,14 +62,4 @@ npm run dev
 
 # 4. Open in your browser
 http://localhost:5173
-
----
-## 📦 Deployment
-This project is deployed via Vercel.
-
-📎 Live URL: [BetterClone-Siddhant.com](https://better-clone-eight.vercel.app/)
-
----
-🤝 Credits
-Built as part of a assignment for Tellis Technologies Private Limited for position Front End Developer internship to demonstrate UI/UX skills using modern frontend tools.
 
