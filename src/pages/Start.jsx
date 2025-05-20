@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Start = () => {
   return (
     <>
-      <div className='sticky top-0 z-50'>
+      <div className='sticky top-0 z-50 overflow-x-hidden'>
         <div className="bg-[#fdfcf9] py-6 px-4 border-t border-[#e8f2ec] relative">
           <div className="max-w-6xl mx-auto flex items-center justify-between">
             <Link to="/">
@@ -29,7 +29,7 @@ const Start = () => {
           </div>
 
           <div className="relative w-full py-10 bg-[#fdfcf9]">
-            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[75rem] h-1 bg-[#e8f2ec]"></div>
+<div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[90vw] md:w-[75rem] h-1 bg-[#e8f2ec]"></div>
 
             <div className="relative z-10 -top-5 flex justify-center">
               <div className="bg-white p-1 rounded-full shadow-sm">
