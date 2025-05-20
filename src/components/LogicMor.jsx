@@ -9,6 +9,12 @@ const LogicMor = () => {
   const [monthlyPayment, setMonthlyPayment] = useState(0);
 
   useEffect(() => {
+    const percent = ((homePrice - 50000) / (2000000 - 50000)) * 100;
+    document.documentElement.style.setProperty("--range-progress", `${percent}%`);
+  }, [homePrice]);
+
+
+  useEffect(() => {
     const principal = homePrice - downPayment;
     const monthlyRate = interestRate / 100 / 12;
     const numberOfPayments = loanTerm * 12;
@@ -62,7 +68,7 @@ const LogicMor = () => {
           step="1000"
           value={homePrice}
           onChange={(e) => setHomePrice(Number(e.target.value))}
-          className="w-full mb-8"
+          className="w-full mb-8 custom-range"
         />
 
         {/* Detail Inputs */}
@@ -101,10 +107,10 @@ const LogicMor = () => {
               onChange={(e) => setLoanTerm(Number(e.target.value))}
               className="w-full p-3 border rounded-lg"
             >
-              <option value={15}>15</option>
-              <option value={20}>20</option>
-              <option value={25}>25</option>
               <option value={30}>30</option>
+              <option value={20}>20</option>
+              <option value={15}>15</option>
+
             </select>
           </div>
         </div>

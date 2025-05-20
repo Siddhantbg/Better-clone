@@ -110,3 +110,44 @@
 .group:focus-within .scrollbar-transition::-webkit-scrollbar {
   height: 6px;
 }
+
+.custom-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #292b29 0%, #292b29 var(--range-progress), #d3d3d3 var(--range-progress), #d3d3d3 100%);
+  outline: none;
+  transition: background 150ms ease-in-out;
+}
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #292b29;
+  cursor: pointer;
+  margin-top: -7px;
+}
+
+.custom-range::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #292b29;
+  cursor: pointer;
+}
+
+/* Dynamic progress fill support */
+.custom-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 9999px;
+}
+
+/* Firefox fallback */
+.custom-range::-moz-range-track {
+  height: 6px;
+  background: #d3d3d3;
+  border-radius: 9999px;
+}
