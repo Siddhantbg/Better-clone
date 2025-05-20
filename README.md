@@ -1,12 +1,63 @@
-# React + Vite
+# 🏡 Better Mortgage UI Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, clean UI clone of the [Better.com](https://better-take-home.vercel.app) homepage. Built with React, Tailwind CSS, and React Router, this project mimics the design, bento grid structure, and functional flow of the Better.com take-home assignment.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ Fully responsive layout (mobile, tablet, desktop)
+- ✅ Sticky Navbar with dynamic background based on scroll
+- ✅ Hero section with overlaid text and image
+- ✅ Tab-driven Bento Grid with dynamic card content
+- ✅ Multiple pages (About, Calculator, Start) using React Router
+- ✅ Google-style review layout with icons
+- ✅ Mobile hamburger menu with slide-in overlay
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **React**
+- **Tailwind CSS**
+- **React Router DOM**
+- **React Icons**
+- **Vite** (for fast development and bundling)
+
+---
+
+## 📁 Project Structure
+
+```bash
+src/
+├── assets/           # Static images (stored in public/assets on Vercel)
+├── components/       # Navbar, BentoGrid, SecHome, etc.
+├── pages/            # Home, About, Calculator, Start
+├── App.jsx
+└── main.jsx
+```
+## 🧾 How to Run Locally
+bash
+Copy
+Edit
+# 1. Clone the repo
+git clone https://github.com/your-username/better-ui-clone.git
+cd better-ui-clone
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the app
+npm run dev
+
+# 4. Open in your browser
+http://localhost:5173
+
+📦 Deployment
+This project is deployed via Vercel.
+
+📎 Live URL: https://better-clone-eight.vercel.app/
+
+🤝 Credits
+Built as part of a assignment for Tellis Technologies Private Limited for position Front End Developer internship to demonstrate UI/UX skills using modern frontend tools.
+
