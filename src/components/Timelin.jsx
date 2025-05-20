@@ -4,7 +4,7 @@ const CompanyTimeline = () => {
   const timeline = [
     {
       date: "2014",
-      
+
       content: "After Vishal Garg's first attempt to purchase his own dream home, he quickly realized that the homebuying process is unnecessarily broken. This inspired him to found a technology-first company led by engineers and data experts with the mission of digitizing and automating home finance to make it cheaper, easier, and faster for all.",
     },
     {
@@ -39,14 +39,14 @@ const CompanyTimeline = () => {
       date: "2023",
       content: "Better Mortgage launches One Day Mortgage¹: The first offering to customers to go from application to full mortgage Commitment Letter within 24 hours vs. typical industry process of 30+ days.",
     },
-     {
+    {
       content: "Better Mortgage launches One Day Verified Approval Letter.",
     },
     {
       content: "Better Mortgage launches the fully digital 3-day HELOC².",
     },
     {
-    date: "Today",
+      date: "Today",
       content: "You become part of the story by joining tens of thousands of happy Better Mortgage borrowers..",
     },
   ];
@@ -56,45 +56,42 @@ const CompanyTimeline = () => {
       <h2 className="text-3xl md:text-5xl font-bold geist-modify text-center text-[#1e1e1e] mb-16">Company Timeline</h2>
 
       <ol className="relative space-y-16 before:absolute before:top-0 before:left-1/2 before:h-full before:w-1 before:-translate-x-1/2 before:rounded-full before:bg-[#d3d3d3]">
-       {timeline.map((item, idx) => (
-  <li key={idx} className="relative">
-    {/* Only render the date pill if item has a date */}
-    {item.date && (
-      <div className="absolute left-1/2 -translate-x-1/2 z-10">
-        <span className="px-8 py-3 text-xl geist-modify font-medium text-white rounded-full bg-[#2f6c45]">
-          {item.date}
-        </span>
-      </div>
-    )}
+        {timeline.map((item, idx) => (
+          <li key={idx} className="relative">
 
-    {/* Content block */}
-    <div
-      className={`mt-10 flex ${
-        idx % 2 === 0
-          ? 'justify-end pr-20 pt-15'
-          : 'justify-start pl-20 pt-15'
-      }`}
-    >
-      <div
-        className={`relative max-w-md bg-[#e9eceb] p-6 rounded-lg shadow-sm ${
-          idx % 2 === 0
-            ? 'mr-[calc(50%-8px)]'
-            : 'ml-[calc(50%-8px)]'
-        }`}
-      >
-        <p className="mt-1 text-sm geist-modify text-[#2f4f3c]">{item.content}</p>
-        <p className="mt-1 text-sm geist-modify text-[#2f4f3c]">{item.content}</p>
+            {item.date && (
+              <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                <span className="px-8 py-3 text-xl geist-modify font-medium text-white rounded-full bg-[#2f6c45]">
+                  {item.date}
+                </span>
+              </div>
+            )}
 
-{item.date === "Today" && (
-  <button className="mt-4 inline-block geist-modify px-7 py-3 text-white bg-[#2f6c45] rounded-lg font-medium hover:bg-[#26553a] transition">
-    Get Started
-  </button>
-)}
+            <div
+              className={`mt-10 flex ${idx % 2 === 0
+                  ? 'justify-end pr-20 pt-15'
+                  : 'justify-start pl-20 pt-15'
+                }`}
+            >
+              <div
+                className={`relative max-w-md bg-[#e9eceb] p-6 rounded-lg shadow-sm ${idx % 2 === 0
+                    ? 'mr-[calc(50%-8px)]'
+                    : 'ml-[calc(50%-8px)]'
+                  }`}
+              >
+                <p className="mt-1 text-sm geist-modify text-[#2f4f3c]">{item.content}</p>
+                <p className="mt-1 text-sm geist-modify text-[#2f4f3c]">{item.content}</p>
 
-      </div>
-    </div>
-  </li>
-))}
+                {item.date === "Today" && (
+                  <button className="mt-4 inline-block geist-modify px-7 py-3 text-white bg-[#2f6c45] rounded-lg font-medium hover:bg-[#26553a] transition">
+                    Get Started
+                  </button>
+                )}
+
+              </div>
+            </div>
+          </li>
+        ))}
       </ol>
     </section>
   );

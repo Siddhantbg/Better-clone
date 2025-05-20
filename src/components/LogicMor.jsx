@@ -35,7 +35,7 @@ const LogicMor = () => {
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 items-center mb-6">
-          {/* Home price input */}
+
           <div>
             <label className="block font-semibold mb-2">Home price</label>
             <input
@@ -46,13 +46,11 @@ const LogicMor = () => {
             />
           </div>
 
-          {/* Monthly payment display */}
           <div className="text-center">
             <p className="font-semibold mb-2">Monthly payment</p>
             <p className="text-3xl font-bold">${monthlyPayment}/mo</p>
           </div>
 
-          {/* Button */}
           <div className="flex justify-end mt-6 md:mt-0">
             <button className="bg-[#2f6c45] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#26573a] transition">
               Get pre-approved
@@ -60,7 +58,6 @@ const LogicMor = () => {
           </div>
         </div>
 
-        {/* Home price slider */}
         <input
           type="range"
           min="50000"
@@ -71,7 +68,6 @@ const LogicMor = () => {
           className="w-full mb-8 custom-range"
         />
 
-        {/* Detail Inputs */}
         <div className="grid md:grid-cols-4 gap-6">
           <div>
             <label className="block font-medium mb-2">ZIP code</label>

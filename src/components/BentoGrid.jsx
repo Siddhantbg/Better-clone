@@ -82,9 +82,8 @@ const BentoGrid = () => {
 
             <div className="bg-[#fdfcf9] px-4 sm:px-6 md:px-10 py-8 overflow-x-hidden">
 
-                {/* Tabs */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4 md:gap-8 px-4 md:px-0">
-                    {/* Left: Headline text */}
+
                     <div className="text-left">
                         <h2 className="text-3xl md:text-5xl font-bold text-[#1e1e1e] leading-tight geist-imed">
                             Got Questions?
@@ -94,7 +93,6 @@ const BentoGrid = () => {
                         </h2>
                     </div>
 
-                    {/* Right: Tab Buttons */}
                     <div
                         className="flex md:space-x-4 mt-4 md:mt-0 overflow-x-auto scrollbar-transition group"
                     >
@@ -116,32 +114,28 @@ const BentoGrid = () => {
 
                 </div>
 
-
-                {/* Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 auto-rows-auto">
 
                     {cards.map((card, idx) => {
-                        // 🔲 Grid column span logic
+
                         let colSpan = "col-span-2";
                         if (idx === 1 || idx === 2) colSpan = "sm:col-span-4";
 
-                        // 📐 Layout type logic
                         const isHorizontalLayout = idx === 1 || idx === 2;
-                        const isImageRight = idx === 2; // Better HELOC only
+                        const isImageRight = idx === 2; 
 
                         return (
                             <div
                                 key={idx}
                                 className={`bg-[#eef7f0] rounded-xl p-6 shadow-sm hover:shadow-md transition ${colSpan}`}
                             >
-                                {/* Layout wrapper with direction control */}
+
                                 <div
                                     className={`flex flex-col ${isHorizontalLayout
                                         ? `${isImageRight ? "lg:flex-row-reverse" : "lg:flex-row"} items-start lg:items-center justify-between gap-6`
                                         : "justify-between gap-4"
                                         }`}
                                 >
-                                    {/* Text Section */}
                                     <div className="flex-1">
                                         <h2 className="text-xl font-semibold geist-bento text-[#1e3d2f] mb-3">
                                             {card.title}
@@ -156,7 +150,6 @@ const BentoGrid = () => {
                                         </button>
                                     </div>
 
-                                    {/* Image Section */}
                                     {card.image && (
                                         <div className="p-3">
                                             <img

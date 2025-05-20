@@ -11,7 +11,6 @@ const Calculator = () => {
 
   return (
     <div>
-      {/* //TODO:Add white color to Navbar */}
 
       <Navbar variant="light" changeColor={false} />
       <div className='bg-[#fefdfa]'>
@@ -28,12 +27,11 @@ const Calculator = () => {
 
       <section className="bg-[#fefdfa] px-6 md:px-20 py-16 text-[#1e1e1e]">
         <div className="max-w-5xl mx-auto">
-          {/* Title */}
+
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             How to use this mortgage calculator?
           </h2>
 
-          {/* Paragraphs */}
           <div className="space-y-6 text-gray-700 text-base leading-relaxed">
             <p>
               Play around with different home prices, locations, down payments, interest rates, and mortgage lengths to see how they impact your monthly mortgage payments.

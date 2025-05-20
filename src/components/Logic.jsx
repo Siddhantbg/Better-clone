@@ -22,9 +22,8 @@ const BreakdownBar = () => {
   <h3 className="text-xl font-medium mb-2">Monthly payment breakdown</h3>
   <h2 className="text-3xl font-bold mb-6">${total.toFixed(2)}/mo</h2>
 
-  {/* Responsive Flex Layout: Bar + Labels + Inputs */}
   <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 mb-10">
-    {/* Visual Bar */}
+
     <div className="flex-1">
       <div className="flex h-14 overflow-hidden rounded-full">
         {segments.map((seg, i) => (
@@ -43,7 +42,6 @@ const BreakdownBar = () => {
       </div>
     </div>
 
-    {/* Labels + Inputs */}
     <div className="grid grid-cols-1 gap-4 w-full md:w-[350px]">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
