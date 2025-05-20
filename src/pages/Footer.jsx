@@ -264,7 +264,7 @@ const Footer = () => {
         </p>
       </div>
     </div>
-
+&copy;Siddhant Bhagat
     </div>
   )
 }
