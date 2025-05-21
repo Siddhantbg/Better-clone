@@ -96,12 +96,12 @@ const BentoGrid = () => {
                     <div
                         className="flex md:space-x-4 mt-4 md:mt-0 overflow-x-auto scrollbar-transition group"
                     >
-                        <div className="flex space-x-4 min-w-max px-1">
+                        <div className="flex space-x-4 min-w-max px-1 ">
                             {tabs.map((tab) => (
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
-                                    className={`px-5 py-3 whitespace-nowrap rounded-full border text-sm font-extrabold transition ${activeTab === tab
+                                    className={`px-5 py-3 whitespace-nowrap cursor-pointer rounded-full border text-sm font-extrabold transition ${activeTab === tab
                                         ? "border-[#2f6c45] border-3 geist-wlight text-[#2f6c45] bg-white"
                                         : "border-gray-300 text-black bg-white geist-wlight hover:border-[#2f6c45] hover:text-[#2f6c45] hover:border-3"
                                         }`}
