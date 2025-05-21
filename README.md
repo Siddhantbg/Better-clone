@@ -1,6 +1,6 @@
 # 🏡 Better Mortgage UI Clone
 
-Hi I am Siddhant Bhaagt this is a responsive, clean UI clone of the [Better.com](https://better-take-home.vercel.app) homepage. Built with React, Tailwind CSS, and React Router, this project mimics the design, bento grid structure, and functional flow of the Better.com take-home assignment.
+Hi I am Siddhant Bhaagt this is a responsive, clean UI clone of the [Better.com](https://better-take-home.vercel.app) homepage. Built with React, Tailwind CSS, and React Router, this project mimics the design, bento grid structure, and functional flow of the Better.com assignment.
 
 ---
 
