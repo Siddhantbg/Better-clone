@@ -118,11 +118,11 @@ const BentoGrid = () => {
 
                     {cards.map((card, idx) => {
 
-                        let colSpan = "col-span-2";
-                        if (idx === 1 || idx === 2) colSpan = "sm:col-span-4";
+                        let colSpan = "lg:col-span-2";
+                        if (idx === 1 || idx === 2) colSpan = "lg:col-span-4";
 
                         const isHorizontalLayout = idx === 1 || idx === 2;
-                        const isImageRight = idx === 2; 
+                        const isImageRight = idx === 2;
 
                         return (
                             <div
