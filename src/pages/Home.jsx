@@ -1,5 +1,5 @@
 import { FaStopwatch, FaStar } from "react-icons/fa";
-import phoneImg from '../assets/hero-variant.webp';
+import phoneImg from '../assets/hero-variant.png';
 import { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import BentoGrid from "../components/BentoGrid.jsx";
@@ -56,7 +56,7 @@ const Home = () => {
       <div
         ref={heroRef}
         id="heroSection"
-        className="bg-[#214534] text-white min-h-[700px] md:min-h-[861px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20 overflow-hidden">
+        className="bg-[#591c76] text-white min-h-[700px] md:min-h-[861px] flex items-center justify-center relative px-4 md:px-10 py-12 md:py-20 overflow-hidden">
 
         <img
           src={phoneImg}
@@ -67,10 +67,10 @@ const Home = () => {
         <div className="absolute top-[10%] left-1/2 transform -translate-x-1/2 z-10 text-center w-full px-4">
 
           <div className="hidden md:block">
-            <h1 className="text-green-400 text-[122px] md:text-[112px] font-bold leading-tight">
-              Mortgages
+            <h1 className="text-white text-[122px] md:text-[112px] font-bold leading-tight">
+              Crypto Payment
             </h1>
-            <h1 className="text-green-400 text-[112px] font-bold leading-tight -mt-5">
+            <h1 className="text-white text-[112px] font-bold leading-tight -mt-5">
               made simple
             </h1>
           </div>
@@ -86,7 +86,7 @@ const Home = () => {
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
 
             <div className="flex flex-col items-center md:items-start absolute top-47.5 md:-top-5 md:left-72 text-center md:text-left">
-              <button className="bg-[#7cf58f] text-black font-medium px-10 py-4 rounded-full text-lg hover:bg-[#6ee87d] transition text-[18px]">
+              <button className="bg-purple-700 text-white font-medium px-10 py-4 rounded-full text-lg hover:bg-purple-400 transition text-[18px]">
                 Start my approval
               </button>
               <div className="flex items-center gap-2 mt-2 text-sm text-white">

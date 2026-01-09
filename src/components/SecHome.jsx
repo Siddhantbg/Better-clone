@@ -1,27 +1,28 @@
 import React from 'react';
 import { useState } from 'react';
 import BentoGrid from './BentoGrid';
+import arianImg from "../assets/arian.png";
+import amandaImg from "../assets/amanda.png";
+import paulImg from "../assets/paul.png";
+
 const testimonials = {
   Arian: {
-    name: 'Arian',
-    image: '/assets/arian.webp',
-    quote:
-      'The reason why I decided to go with Better is because after I did my research with the other lenders, Better was the ones that provided me with the lowest interest rate.',
-    title: 'Better Mortgage customer',
+    name: "Crypto Exchange",
+    image: arianImg,
+    quote: "...",
+    title: "Better Mortgage customer",
   },
   Amanda: {
-    name: 'Amanda',
-    image: '/assets/amanda.webp',
-    quote:
-      'Better made the homebuying process incredibly smooth and stress-free. I’m so grateful for their support and transparency.',
-    title: 'First-time buyer',
+    name: "DeFi Platform",
+    image: amandaImg,
+    quote: "...",
+    title: "First-time buyer",
   },
   Paul: {
-    name: 'Paul',
-    image: '/assets/paul.webp',
-    quote:
-      'Getting approved through Better was fast and easy. They gave me the confidence I needed during a competitive market.',
-    title: 'Refinance client',
+    name: "Smart Contract",
+    image: paulImg,
+    quote: "...",
+    title: "Refinance client",
   },
 };
 const SecHome = () => {
@@ -41,18 +42,20 @@ const SecHome = () => {
           />
 
           <div className="hidden md:flex justify-center space-x-4 mt-4 md:mr-10">
-            {Object.keys(testimonials).map((person) => (
-              <button
-                key={person}
-                onClick={() => setSelected(person)}
-                className={`px-6 py-2 rounded-full transition border text-base ${selected === person
-                    ? 'border-2 border-[#2c6b45] text-[#2c6b45] font-extrabold shadow-sm'
-                    : 'border border-gray-300 text-gray-800 font-medium'
-                  }`}
-              >
-                {person}
-              </button>
-            ))}
+          {Object.keys(testimonials).map((person) => (
+  <button
+    key={person}
+    onClick={() => setSelected(person)}
+    className={`px-6 py-2 rounded-full transition border text-base ${
+      selected === person
+        ? 'border-2 border-[#2c6b45] text-[#2c6b45] font-extrabold shadow-sm'
+        : 'border border-gray-300 text-gray-800 font-medium'
+    }`}
+  >
+    {testimonials[person].name}
+  </button>
+))}
+       
           </div>
         </div>
 

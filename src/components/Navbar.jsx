@@ -13,11 +13,11 @@ const Navbar = ({ changeColor, variant = "default" }) => {
         ? 'bg-white text-black'
         : variant === 'light'
           ? 'bg-white text-[#1e1e1e]'
-          : 'bg-[#214534] text-white'
+          : 'bg-[#591c76] text-white'
         }`}>
 
         <Link to="/">
-          <div className="cursor-pointer text-2xl geist-heavy font-bold">Better</div>
+          <div className="cursor-pointer text-2xl geist-heavy font-bold">KrizPay</div>
         </Link>
 
         <div className="flex items-center gap-3 ml-auto md:hidden">
@@ -26,7 +26,7 @@ const Navbar = ({ changeColor, variant = "default" }) => {
           </button>
 
 
-          <button className="bg-[#7cf58f] text-black font-semibold px-4 py-2 rounded-full hover:bg-[#6ee87d] transition text-sm">
+          <button className="bg-purple-700 text-white font-semibold px-4 py-2 rounded-full hover:bg-purple-400 transition text-sm">
             Continue
           </button>
           <button
@@ -56,7 +56,7 @@ const Navbar = ({ changeColor, variant = "default" }) => {
           >
             Sign in
           </Link>
-          <button className="bg-[#7cf58f] geist-light cursor-pointer text-black font-semibold px-5 py-2 rounded-full hover:bg-[#214534] hover:text-white transition">
+          <button className="bg-purple-700 geist-light cursor-pointer text-white font-bold px-5 py-2 rounded-full hover:bg-purple-400 hover:text-white transition">
             Continue
           </button>
 
@@ -103,7 +103,7 @@ const Navbar = ({ changeColor, variant = "default" }) => {
           </div>
 
 
-          <button className="mt-auto w-full bg-green-700 geist-light text-white py-3 rounded-full font-semibold">
+          <button className="mt-auto w-full bg-purple-700 geist-light text-white py-3 rounded-full font-semibold">
             Continue
           </button>
           <button className="w-full border geist-light border-gray-300 py-3 rounded-full flex justify-center items-center gap-2">
