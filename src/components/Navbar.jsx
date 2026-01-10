@@ -26,7 +26,7 @@ const Navbar = ({ changeColor, variant = "default" }) => {
           </button>
 
 
-          <button className="bg-purple-700 text-white font-semibold px-4 py-2 rounded-full hover:bg-purple-400 transition text-sm">
+          <button className="bg-[#773db9] text-white font-semibold px-4 py-2 rounded-full hover:bg-purple-400 transition text-sm">
             Continue
           </button>
           <button
@@ -41,7 +41,7 @@ const Navbar = ({ changeColor, variant = "default" }) => {
 
         <div className="hidden md:flex gap-10 ml-20 text-sm geist-light font-medium">
           <Link to="/about" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#1c3b2d] transition">About Us</Link>
-          <Link to="/calculator" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#1c3b2d] transition">Mortgage Calculator</Link>
+          <Link to="/calculator" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#1c3b2d] transition">Transaction Efficiency Tool</Link>
           <Link to="/start" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#1c3b2d] transition">Start Page</Link>
         </div>
 
@@ -56,7 +56,7 @@ const Navbar = ({ changeColor, variant = "default" }) => {
           >
             Sign in
           </Link>
-          <button className="bg-purple-700 geist-light cursor-pointer text-white font-bold px-5 py-2 rounded-full hover:bg-purple-400 hover:text-white transition">
+          <button className="bg-[#773db9] geist-light cursor-pointer text-white font-bold px-5 py-2 rounded-full hover:bg-purple-400 hover:text-white transition">
             Continue
           </button>
 

@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-20">
 
           <div className="space-y-6 max-w-md geist-modify">
-            <h2 className="font-extrabold text-[#3c754c] text-4xl">KrizPay</h2>
+            <h2 className="font-extrabold text-[#4D2FB2] text-4xl">KrizPay</h2>
             <p className="text-sm text-[#214534]">
               KrizPay is transforming crypto transactions in India by enabling seamless
               crypto-to-INR merchant payments using UPI.
@@ -43,7 +43,7 @@ const Footer = () => {
                 },
               ].map((item, i) => (
                 <div key={i}>
-                  <h4 className="font-bold text-[#214534]">
+                  <h4 className="font-bold text-[#4D2FB2]">
                     KrizPay{" "}
                     <span className="font-normal text-[#9e9e9e]">
                       {item.title}
@@ -127,9 +127,9 @@ const Footer = () => {
 
       <div className="bg-[#fdfcf9] px-8 md:px-32 pt-10 pb-16 text-[#1e1e1e] text-sm">
         <div className="flex gap-6 geist-modify mb-6">
-          <FacebookIcon className="w-7 h-7 cursor-pointer hover:text-[#2f6c45] transition" />
-          <InstagramIcon className="w-7 h-7 cursor-pointer hover:text-[#2f6c45] transition" />
-          <LinkedinIcon className="w-7 h-7 cursor-pointer hover:text-[#2f6c45] transition" />
+          <FacebookIcon className="w-7 h-7 cursor-pointer hover:text-[#4D2FB2] transition" />
+          <InstagramIcon className="w-7 h-7 cursor-pointer hover:text-[#4D2FB2] transition" />
+          <LinkedinIcon className="w-7 h-7 cursor-pointer hover:text-[#4D2FB2] transition" />
         </div>
 
         <div className="space-y-6 leading-[22px] geist-modify max-w-5xl text-[#414240]">

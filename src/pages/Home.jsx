@@ -86,7 +86,7 @@ const Home = () => {
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
 
             <div className="flex flex-col items-center md:items-start absolute top-47.5 md:-top-5 md:left-72 text-center md:text-left">
-              <button className="bg-purple-700 text-white font-medium px-10 py-4 rounded-full text-lg hover:bg-purple-400 transition text-[18px]">
+              <button className="bg-[#773db9] text-white font-medium px-10 py-4 rounded-full text-lg hover:bg-purple-400 transition text-[18px]">
                 Start my approval
               </button>
               <div className="flex items-center gap-2 mt-2 text-sm text-white">

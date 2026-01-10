@@ -48,7 +48,7 @@ const SecHome = () => {
     onClick={() => setSelected(person)}
     className={`px-6 py-2 rounded-full transition border text-base ${
       selected === person
-        ? 'border-2 border-[#2c6b45] text-[#2c6b45] font-extrabold shadow-sm'
+        ? 'border-2 border-[#4D2FB2] text-[#4D2FB2] font-extrabold shadow-sm'
         : 'border border-gray-300 text-gray-800 font-medium'
     }`}
   >
@@ -64,12 +64,12 @@ const SecHome = () => {
             Find out why <br className="hidden md:block" /> we're better
           </h2>
 
-          <button className="bg-[#214534] text-white font-medium px-10 py-3 md:px-12 md:py-4 rounded-full hover:bg-[#265d3c] transition mb-6 w-full sm:w-auto">
+          <button className="bg-[#4D2FB2] text-white font-medium px-10 py-3 md:px-12 md:py-4 rounded-full hover:bg-[#265d3c] transition mb-6 w-full sm:w-auto">
             See all our stories
           </button>
 
           <div className="flex justify-center md:justify-start items-center gap-2 text-[#1e1e1e] font-medium">
-            <span className="text-green-700 text-2xl md:text-3xl">★</span>
+            <span className="text-purple-700 text-2xl md:text-3xl">★</span>
             <span className="font-extrabold text-base md:text-lg">Trustpilot</span>
             <span className="geist-tlight text-sm md:text-sm">Excellent <strong>4.4</strong></span>
             <span className="text-sm md:text-sm">out of 5</span>
@@ -81,7 +81,7 @@ const SecHome = () => {
                 key={person}
                 onClick={() => setSelected(person)}
                 className={`px-6 py-2 rounded-full transition border text-base ${selected === person
-                    ? 'border-2 border-[#2c6b45] text-[#2c6b45] font-extrabold shadow-sm'
+                    ? 'border-2 border-[#4D2FB2] text-[#4D2FB2] font-extrabold shadow-sm'
                     : 'border border-gray-300 text-gray-800 font-medium'
                   }`}
               >
