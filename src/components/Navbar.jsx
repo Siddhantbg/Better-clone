@@ -40,9 +40,9 @@ const Navbar = ({ changeColor, variant = "default" }) => {
         </div>
 
         <div className="hidden md:flex gap-10 ml-20 text-sm geist-light font-medium">
-          <Link to="/about" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#1c3b2d] transition">About Us</Link>
-          <Link to="/calculator" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#1c3b2d] transition">Transaction Efficiency Tool</Link>
-          <Link to="/start" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#1c3b2d] transition">Start Page</Link>
+          <Link to="/about" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#4D2FB2] transition">About Us</Link>
+          <Link to="/calculator" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#4D2FB2] transition">Transaction Efficiency Tool</Link>
+          <Link to="/start" className="px-6 py-3 rounded-full hover:bg-[#f6f6f3] hover:text-[#4D2FB2] transition">Start Page</Link>
         </div>
 
         <div className="hidden md:flex items-center gap-4 ml-auto">
