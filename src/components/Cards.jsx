@@ -9,15 +9,15 @@ const Cards = () => {
                 <div className="flex justify-center">
                     <div className="space-y-3 text-left">
                         <div className="flex items-center gap-3">
-                            <Percent className="text-green-700 w-5 h-5" />
-                            <span>Custom mortgage rates</span>
+                            <Percent className="text-purple-700 w-5 h-5" />
+                            <span>Custom exchange rates</span>
                         </div>
                         <div className="flex items-center gap-3">
-                            <DollarSign className="text-green-700 w-5 h-5" />
+                            <DollarSign className="text-purple-700 w-5 h-5" />
                             <span>Exclusive offers</span>
                         </div>
                         <div className="flex items-center gap-3">
-                            <Smartphone className="text-green-700 w-5 h-5" />
+                            <Smartphone className="text-purple-700 w-5 h-5" />
                             <span>A personalized dashboard</span>
                         </div>
                     </div>

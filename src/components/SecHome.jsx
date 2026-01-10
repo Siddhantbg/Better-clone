@@ -64,13 +64,13 @@ const SecHome = () => {
             Find out why <br className="hidden md:block" /> we're better
           </h2>
 
-          <button className="bg-[#4D2FB2] text-white font-medium px-10 py-3 md:px-12 md:py-4 rounded-full hover:bg-[#265d3c] transition mb-6 w-full sm:w-auto">
+          <button className="bg-[#4D2FB2] cursor-pointer text-white font-medium px-10 py-3 md:px-12 md:py-4 rounded-full hover:bg-[#B153D7] transition mb-6 w-full sm:w-auto">
             See all our stories
           </button>
 
           <div className="flex justify-center md:justify-start items-center gap-2 text-[#1e1e1e] font-medium">
             <span className="text-purple-700 text-2xl md:text-3xl">★</span>
-            <span className="font-extrabold text-base md:text-lg">Trustpilot</span>
+            <span className="font-extrabold text-base md:text-lg">Unit Testing</span>
             <span className="geist-tlight text-sm md:text-sm">Excellent <strong>4.4</strong></span>
             <span className="text-sm md:text-sm">out of 5</span>
           </div>

@@ -4,6 +4,7 @@ import { FaPhone } from "react-icons/fa";
 import Middle from '../components/Middle';
 import Cards from '../components/Cards';
 import { Link } from "react-router-dom";
+import shrey from '../assets/shrey.jpg';
 
 const Start = () => {
   return (
@@ -13,13 +14,13 @@ const Start = () => {
           <div className="max-w-6xl mx-auto flex items-center justify-between">
             <Link to="/">
               <div>
-                <h4 className="font-bold text-[#2f6c45] geist-modify text-lg">Better</h4>
-                <p className="text-gray-600 geist-modify -mt-1 text-lg">Mortgage</p>
+                <h4 className="font-bold text-[#4D2FB2] geist-modify text-lg">Krizpay</h4>
+                <p className="text-gray-600 geist-modify -mt-1 text-lg">Assistant</p>
               </div>
             </Link>
             <div className="flex items-center gap-3">
               <button className="p-2 rounded-full bg-[#d3e8d5]">
-                <FaPhone className="w-5 h-5 text-[#1d3c34] geist-modify transform scale-x-[-1]" />
+                <FaPhone className="w-5 h-5 text-[#4D2FB2] geist-modify transform scale-x-[-1]" />
               </button>
 
               <p className="text-[#1e1e1e] text-sm md:text-base">
@@ -34,7 +35,7 @@ const Start = () => {
             <div className="relative z-10 -top-5 flex justify-center">
               <div className="bg-white p-1 rounded-full shadow-sm">
                 <img
-                  src="/assets/betty1.webp"
+                  src={shrey}
                   alt="Agent"
                   className="w-14 h-14 rounded-full object-cover"
                 />

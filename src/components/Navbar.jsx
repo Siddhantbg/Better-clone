@@ -56,7 +56,7 @@ const Navbar = ({ changeColor, variant = "default" }) => {
           >
             Sign in
           </Link>
-          <button className="bg-[#773db9] geist-light cursor-pointer text-white font-bold px-5 py-2 rounded-full hover:bg-purple-400 hover:text-white transition">
+          <button className="bg-[#773db9] geist-light cursor-pointer text-white font-bold px-5 py-2 rounded-full hover:bg-[#B153D7] hover:text-white transition">
             Continue
           </button>
 
