@@ -10,7 +10,7 @@ const Navbar = ({ changeColor, variant = "default" }) => {
     <>
       
       <nav className={`sticky top-0 z-50 px-14 py-8 flex items-center justify-between md:justify-normal transition-all duration-300 ${changeColor
-        ? 'bg-white text-black'
+        ? 'bg-white text-[#4D2FB2]'
         : variant === 'light'
           ? 'bg-white text-[#1e1e1e]'
           : 'bg-[#591c76] text-white'
