@@ -1,0 +1,203 @@
+/* Glitch effect styles for cyberpunk aesthetics */
+
+.glitch-low {
+  animation: glitch-low 0.3s ease-in-out;
+}
+
+.glitch-medium {
+  animation: glitch-medium 0.5s ease-in-out;
+}
+
+.glitch-high {
+  animation: glitch-high 0.8s ease-in-out;
+}
+
+@keyframes glitch-low {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(-1px, -1px);
+  }
+  60% {
+    transform: translate(1px, 1px);
+  }
+  80% {
+    transform: translate(1px, -1px);
+  }
+}
+
+@keyframes glitch-medium {
+  0%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  70% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(360deg);
+  }
+  90% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+}
+
+@keyframes glitch-high {
+  0%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  5% {
+    transform: translate(-3px, 3px);
+    filter: hue-rotate(45deg) saturate(1.5);
+  }
+  10% {
+    transform: translate(-3px, -3px);
+    filter: hue-rotate(90deg) saturate(2);
+  }
+  15% {
+    transform: translate(3px, 3px);
+    filter: hue-rotate(135deg) saturate(1.5);
+  }
+  20% {
+    transform: translate(3px, -3px);
+    filter: hue-rotate(180deg) saturate(1);
+  }
+  25% {
+    transform: translate(-3px, 3px);
+    filter: hue-rotate(225deg) saturate(1.5);
+  }
+  30% {
+    transform: translate(-3px, -3px);
+    filter: hue-rotate(270deg) saturate(2);
+  }
+  35% {
+    transform: translate(3px, 3px);
+    filter: hue-rotate(315deg) saturate(1.5);
+  }
+  40% {
+    transform: translate(3px, -3px);
+    filter: hue-rotate(360deg) saturate(1);
+  }
+  45% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(45deg) saturate(1.2);
+  }
+  50% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(90deg) saturate(1.8);
+  }
+  55% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(135deg) saturate(1.2);
+  }
+  60% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(180deg) saturate(1);
+  }
+  65% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(225deg) saturate(1.2);
+  }
+  70% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(270deg) saturate(1.8);
+  }
+  75% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(315deg) saturate(1.2);
+  }
+  80% {
+    transform: translate(-1px, -1px);
+    filter: hue-rotate(360deg) saturate(1);
+  }
+  85% {
+    transform: translate(1px, 1px);
+    filter: hue-rotate(45deg) saturate(1.1);
+  }
+  90% {
+    transform: translate(-1px, 1px);
+    filter: hue-rotate(90deg) saturate(1.4);
+  }
+  95% {
+    transform: translate(1px, -1px);
+    filter: hue-rotate(135deg) saturate(1.1);
+  }
+}
+
+/* Cyberpunk text glow effects */
+.cyberpunk-glow {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px #7C3AED,
+    0 0 35px #7C3AED,
+    0 0 40px #7C3AED;
+}
+
+.neon-text {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #7C3AED,
+    0 0 82px #7C3AED,
+    0 0 92px #7C3AED,
+    0 0 102px #7C3AED,
+    0 0 151px #7C3AED;
+}
+
+/* Animated gradient text */
+.gradient-text {
+  background: linear-gradient(45deg, #7C3AED, #8B5CF6, #A855F7, #C084FC);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

@@ -5,6 +5,7 @@ import MortgageFormula from '../components/MotagageFormula';
 import Mortgage from "../components/MortgageText"
 import LogicMor from '../components/LogicMor'
 import Logic from '../components/Logic'
+import FormDemo from '../components/FormDemo';
 
 const Calculator = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -24,6 +25,9 @@ const Calculator = () => {
       </div>
 
       <hr className="w-[77rem] max-w-full mx-auto border-t border-[#d3d3d3]" />
+
+      {/* Enhanced Form Demo Section */}
+      <FormDemo />
 
       {/* Content Section */}
       <section className="bg-[#fefdfa] px-6 md:px-20 py-16 text-[#1e1e1e]">

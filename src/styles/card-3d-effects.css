@@ -1,0 +1,206 @@
+/* 3D Card Hover Effects for Modern Crypto UI */
+
+/* Base 3D card styles */
+.card-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-3d-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Lift and tilt effects */
+.card-3d-lift {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center center;
+}
+
+.card-3d-lift:hover {
+  transform: translateY(-12px) rotateX(5deg) rotateY(5deg) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(124, 58, 237, 0.2),
+    0 15px 35px rgba(139, 92, 246, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Tilt based on mouse position */
+.card-3d-tilt {
+  transition: transform 0.2s ease-out;
+  transform-origin: center center;
+}
+
+.card-3d-tilt:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Enhanced lift with rotation */
+.card-3d-enhanced {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center center;
+}
+
+.card-3d-enhanced:hover {
+  transform: translateY(-16px) rotateX(8deg) rotateY(8deg) scale(1.03);
+  box-shadow: 
+    0 30px 60px rgba(124, 58, 237, 0.25),
+    0 20px 40px rgba(139, 92, 246, 0.2),
+    0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Floating effect */
+.card-3d-float {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotateX(2deg);
+  }
+}
+
+.card-3d-float:hover {
+  transform: translateY(-20px) rotateX(10deg) rotateY(5deg) scale(1.04);
+  animation: none;
+  box-shadow: 
+    0 35px 70px rgba(124, 58, 237, 0.3),
+    0 25px 50px rgba(139, 92, 246, 0.25),
+    0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Perspective card effect */
+.card-3d-perspective {
+  perspective: 1200px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-3d-perspective:hover {
+  transform: translateY(-10px) rotateX(15deg) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(124, 58, 237, 0.2),
+    0 10px 25px rgba(139, 92, 246, 0.15);
+}
+
+/* Smooth transform transitions */
+.card-3d-smooth {
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center bottom;
+}
+
+.card-3d-smooth:hover {
+  transform: translateY(-14px) rotateX(12deg) rotateY(3deg) scale(1.025);
+  box-shadow: 
+    0 28px 55px rgba(124, 58, 237, 0.22),
+    0 18px 35px rgba(139, 92, 246, 0.18),
+    0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Interactive tilt based on cursor position */
+.card-3d-interactive {
+  transition: transform 0.1s ease-out;
+  transform-origin: center center;
+}
+
+/* Glow enhancement for 3D cards */
+.card-3d-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(124, 58, 237, 0.4),
+    0 0 60px rgba(139, 92, 246, 0.3),
+    0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Depth layers for enhanced 3D effect */
+.card-3d-layered {
+  position: relative;
+}
+
+.card-3d-layered::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(139, 92, 246, 0.05));
+  border-radius: inherit;
+  z-index: -1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(-10px);
+}
+
+.card-3d-layered:hover::before {
+  transform: translateZ(-20px) translateY(5px);
+  opacity: 0.8;
+}
+
+/* Magnetic attraction effect */
+.card-3d-magnetic {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.card-3d-magnetic:hover {
+  transform: translateY(-12px) scale(1.02);
+}
+
+/* Responsive 3D effects */
+@media (max-width: 768px) {
+  .card-3d-lift:hover,
+  .card-3d-enhanced:hover,
+  .card-3d-float:hover,
+  .card-3d-perspective:hover,
+  .card-3d-smooth:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 
+      0 15px 30px rgba(124, 58, 237, 0.15),
+      0 10px 20px rgba(139, 92, 246, 0.1);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .card-3d,
+  .card-3d-inner,
+  .card-3d-lift,
+  .card-3d-tilt,
+  .card-3d-enhanced,
+  .card-3d-float,
+  .card-3d-perspective,
+  .card-3d-smooth,
+  .card-3d-interactive,
+  .card-3d-layered::before,
+  .card-3d-magnetic {
+    transition: none;
+    animation: none;
+    transform: none;
+  }
+  
+  .card-3d-lift:hover,
+  .card-3d-enhanced:hover,
+  .card-3d-float:hover,
+  .card-3d-perspective:hover,
+  .card-3d-smooth:hover,
+  .card-3d-magnetic:hover {
+    transform: none;
+    box-shadow: 0 4px 8px rgba(124, 58, 237, 0.1);
+  }
+}
+
+/* High performance mode for older devices */
+@media (max-width: 480px) {
+  .card-3d-lift:hover,
+  .card-3d-enhanced:hover,
+  .card-3d-float:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(124, 58, 237, 0.1);
+  }
+}

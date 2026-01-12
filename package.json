@@ -7,28 +7,48 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/vite": "^4.1.7",
+    "canvas": "^3.2.0",
+    "framer-motion": "^12.25.0",
+    "gsap": "^3.14.2",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.511.0",
+    "ogl": "^1.0.11",
     "react": "^19.1.0",
+    "react-bits": "^1.0.5",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "react-native-web": "^0.21.2",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.7",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "@types/three": "^0.182.0",
     "@vitejs/plugin-react": "^4.4.1",
+    "@vitest/ui": "^4.0.16",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+    "fast-check": "^4.5.3",
     "globals": "^16.0.0",
-    "vite": "^6.3.5"
+    "jsdom": "^27.4.0",
+    "vite": "^6.3.5",
+    "vitest": "^4.0.16"
   }
 }

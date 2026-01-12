@@ -1,0 +1,253 @@
+/**
+ * Reduced Motion Accessibility Styles
+ * Provides simplified animations and static alternatives for users who prefer reduced motion
+ */
+
+/* CSS Custom Properties for Animation Control */
+:root {
+  --animation-duration-fast: 0.3s;
+  --animation-duration-medium: 0.6s;
+  --animation-duration-slow: 1.2s;
+  --transition-duration: 0.3s;
+  --scroll-behavior: smooth;
+  --opacity-transition: opacity 0.3s ease;
+}
+
+/* Reduced Motion Overrides */
+.reduced-motion,
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  /* Disable all animations and transitions */
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Specific reduced motion styles */
+.reduced-motion {
+  /* Disable transform animations */
+  --transform-scale: 1;
+  --transform-translate: 0;
+  --transform-rotate: 0deg;
+  
+  /* Disable parallax effects */
+  --parallax-transform: none;
+  
+  /* Disable particle animations */
+  --particle-animation: none;
+  
+  /* Disable gradient animations */
+  --gradient-animation: none;
+}
+
+/* Media Query for Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable specific animation types */
+  .particle-system,
+  .animated-gradient,
+  .parallax-element,
+  .infinite-animation {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Simplify hover effects */
+  .hover-lift:hover,
+  .hover-scale:hover,
+  .hover-rotate:hover {
+    transform: none !important;
+  }
+
+  /* Static focus indicators instead of animated ones */
+  .focus-animated:focus {
+    outline: 2px solid var(--color-primary) !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+  }
+
+  /* Disable page transition animations */
+  .page-transition-enter,
+  .page-transition-exit {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Disable scroll-triggered animations */
+  .scroll-reveal,
+  .scroll-fade-in,
+  .scroll-slide-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Disable loading animations */
+  .loading-spinner {
+    animation: none !important;
+  }
+
+  /* Static button states */
+  .magnetic-button:hover {
+    transform: none !important;
+  }
+
+  /* Disable orb animations */
+  .interactive-orb {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Disable text animations */
+  .typewriter-effect,
+  .glitch-effect,
+  .animated-text {
+    animation: none !important;
+  }
+
+  /* Disable card animations */
+  .glass-card:hover,
+  .bento-card:hover {
+    transform: none !important;
+    box-shadow: var(--card-shadow-static, 0 4px 6px rgba(0, 0, 0, 0.1)) !important;
+  }
+
+  /* Disable navbar blur animation */
+  .navbar-blur {
+    backdrop-filter: blur(0px) !important;
+    transition: none !important;
+  }
+}
+
+/* Accessibility-friendly alternatives */
+.reduced-motion .focus-ring {
+  /* Static focus ring instead of animated glow */
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.reduced-motion .loading-indicator {
+  /* Static loading indicator */
+  background: var(--color-primary);
+  opacity: 0.8;
+}
+
+.reduced-motion .success-indicator {
+  /* Static success state */
+  background: #10B981;
+  color: white;
+}
+
+.reduced-motion .error-indicator {
+  /* Static error state */
+  background: #EF4444;
+  color: white;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .reduced-motion .glass-card {
+    background: var(--color-surface) !important;
+    backdrop-filter: none !important;
+    border: 2px solid var(--color-primary) !important;
+  }
+
+  .reduced-motion .gradient-text {
+    background: none !important;
+    color: var(--color-primary) !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+  }
+}
+
+/* Simplified navigation for reduced motion */
+.reduced-motion .nav-link {
+  position: relative;
+}
+
+.reduced-motion .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+/* Static card hover states */
+.reduced-motion .card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+/* Simplified form feedback */
+.reduced-motion .form-field.error {
+  border-color: #EF4444;
+}
+
+.reduced-motion .form-field.success {
+  border-color: #10B981;
+}
+
+.reduced-motion .form-field:focus {
+  border-color: var(--color-primary);
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Static progress indicators */
+.reduced-motion .progress-bar {
+  background: linear-gradient(90deg, var(--color-primary) var(--progress-value, 0%), transparent var(--progress-value, 0%));
+}
+
+/* Utility classes for reduced motion */
+.motion-safe {
+  /* Only apply animations when motion is safe */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+.motion-reduce {
+  /* Always use reduced motion */
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+/* Skip links for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+.reduced-motion .skip-link:focus {
+  transition: none;
+}

@@ -1,5 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 @import "tailwindcss";
+@import "./styles/micro-interactions.css";
+@import "./styles/gradients.css";
+@import "./styles/glitch.css";
+@import "./styles/buttons.css";
+@import "./styles/card-3d-effects.css";
+@import "./styles/neon-glow-effects.css";
+@import "./styles/reduced-motion.css";
+@import "./styles/mobile-optimization.css";
+@import "./styles/browser-fallbacks.css";
+
+/* CSS Custom Properties for Violet Dark Theme */
+:root {
+  --color-primary: #7C3AED;
+  --color-secondary: #8B5CF6;
+  --color-background: #0F0F23;
+  --color-surface: #1A1B3A;
+  --color-accent: #F59E0B;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A1A1AA;
+  --color-text-accent: #F59E0B;
+  
+  /* Gradient variables */
+  --gradient-hero-primary: radial-gradient(circle at 50% 50%, #7C3AED 0%, #8B5CF6 50%, #0F0F23 100%);
+  --gradient-hero-animated: radial-gradient(circle at var(--gradient-x, 50%) var(--gradient-y, 50%), #7C3AED 0%, #8B5CF6 30%, #0F0F23 70%);
+  --gradient-hero-particles: conic-gradient(from 0deg at 50% 50%, #7C3AED, #8B5CF6, #F59E0B, #7C3AED);
+  --gradient-card-glass: linear-gradient(135deg, rgba(26, 27, 58, 0.8) 0%, rgba(15, 15, 35, 0.4) 100%);
+  --gradient-card-hover: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(15, 15, 35, 0.6) 100%);
+  --gradient-button-primary: linear-gradient(45deg, #7C3AED, #8B5CF6);
+  --gradient-button-animated: linear-gradient(45deg, #7C3AED, #8B5CF6, #F59E0B, #7C3AED);
+  --gradient-text-primary: linear-gradient(90deg, #7C3AED, #8B5CF6);
+  --gradient-background-mesh: radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
+  
+  /* Legacy gradient variables for backward compatibility */
+  --gradient-hero: radial-gradient(circle at 50% 50%, #7C3AED 0%, #8B5CF6 50%, #0F0F23 100%);
+  --gradient-card: linear-gradient(135deg, rgba(26, 27, 58, 0.8) 0%, rgba(15, 15, 35, 0.4) 100%);
+  --gradient-button: linear-gradient(45deg, #7C3AED, #8B5CF6, #F59E0B);
+}
+
+/* Violet Dark Theme Global Styles */
+.violet-dark-theme {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: "Geist", sans-serif;
+}
+
+/* Glassmorphism Effects */
+.glass-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(26, 27, 58, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(139, 92, 246, 0.05) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* Animated border glow */
+.glass-card-glow {
+  position: relative;
+}
+
+.glass-card-glow::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #7C3AED, #8B5CF6, #F59E0B, #7C3AED);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: borderGlow 3s linear infinite;
+}
+
+.glass-card-glow:hover::after {
+  opacity: 1;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Neon glow effects for interactive elements */
+.neon-glow {
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.neon-glow:hover {
+  box-shadow: 
+    0 0 20px rgba(124, 58, 237, 0.5),
+    0 0 40px rgba(124, 58, 237, 0.3),
+    0 0 60px rgba(124, 58, 237, 0.1);
+}
 
 .geist-light {
   font-family: "Geist", sans-serif;

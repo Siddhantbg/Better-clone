@@ -1,0 +1,175 @@
+/* Animated Gradient Mesh Styles */
+
+.animated-gradient-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Container for gradient mesh backgrounds */
+.gradient-mesh-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient mesh overlay effects */
+.gradient-mesh-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 15, 35, 0) 0%,
+    rgba(15, 15, 35, 0.3) 50%,
+    rgba(15, 15, 35, 0.6) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Animated gradient keyframes for CSS fallback */
+@keyframes gradientMeshShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* CSS-only gradient mesh fallback */
+.gradient-mesh-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 60% 80%, rgba(124, 58, 237, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 90% 60%, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: gradientMeshShift 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Geometric pattern overlays */
+.geometric-patterns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 35px,
+      rgba(124, 58, 237, 0.1) 35px,
+      rgba(124, 58, 237, 0.1) 36px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 35px,
+      rgba(139, 92, 246, 0.1) 35px,
+      rgba(139, 92, 246, 0.1) 36px
+    );
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+/* Constellation line effects */
+.constellation-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, transparent 49%, rgba(139, 92, 246, 0.2) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(139, 92, 246, 0.2) 50%, transparent 51%);
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animated-gradient-mesh {
+    opacity: 0.7;
+  }
+  
+  .gradient-mesh-fallback {
+    background-size: 150% 150%;
+    animation-duration: 6s;
+  }
+  
+  .geometric-patterns {
+    opacity: 0.3;
+  }
+  
+  .constellation-lines {
+    opacity: 0.2;
+    background-size: 80px 80px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animated-gradient-mesh {
+    animation: none;
+  }
+  
+  .gradient-mesh-fallback {
+    animation: none;
+    background-position: 50% 50%;
+  }
+  
+  .geometric-patterns,
+  .constellation-lines {
+    opacity: 0.2;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .animated-gradient-mesh {
+    opacity: 0.8;
+  }
+  
+  .gradient-mesh-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+}
+
+/* Performance optimizations */
+.animated-gradient-mesh {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Smooth transitions for dynamic updates */
+.gradient-mesh-container * {
+  transition: opacity 0.3s ease-in-out;
+}

@@ -1,0 +1,467 @@
+/* Form Animation Styles */
+
+/* Fade-in animation for validation messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Floating label animations */
+@keyframes labelFloat {
+  from {
+    top: 1rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  to {
+    top: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--current-color, #7C3AED);
+  }
+}
+
+.label-floating {
+  animation: labelFloat 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Input focus glow animation */
+@keyframes inputGlow {
+  0% {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--current-color, #7C3AED)40, 0 0 40px var(--current-color, #7C3AED)20;
+    transform: translateY(-2px);
+  }
+}
+
+.input-focus-glow {
+  animation: inputGlow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Success validation animation */
+@keyframes successPulse {
+  0% {
+    text-shadow: 0 0 5px #10B981;
+  }
+  50% {
+    text-shadow: 0 0 15px #10B981, 0 0 25px #10B981;
+  }
+  100% {
+    text-shadow: 0 0 5px #10B981;
+  }
+}
+
+.success-pulse {
+  animation: successPulse 1s ease-in-out;
+}
+
+/* Error validation animation */
+@keyframes errorShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+.error-shake {
+  animation: errorShake 0.5s ease-in-out;
+}
+
+/* Loading state animation */
+@keyframes loadingPulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.loading-pulse {
+  animation: loadingPulse 1.5s ease-in-out infinite;
+}
+
+/* Form container animations */
+@keyframes formSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-slide-in {
+  animation: formSlideIn 0.5s ease-out;
+}
+
+/* Button hover effects */
+@keyframes buttonHover {
+  from {
+    transform: translateY(0) scale(1);
+    box-shadow: none;
+  }
+  to {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+  }
+}
+
+.button-hover-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-hover-effect:hover {
+  animation: buttonHover 0.3s ease-out forwards;
+}
+
+/* Progress indicator animations */
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width, 100%);
+  }
+}
+
+.progress-fill {
+  animation: progressFill 0.8s ease-out;
+}
+
+/* Floating action button magnetic effect */
+@keyframes magneticPull {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(var(--magnetic-x, 0), var(--magnetic-y, 0)) scale(1.05);
+  }
+  100% {
+    transform: translate(var(--magnetic-x, 0), var(--magnetic-y, 0)) scale(1.02);
+  }
+}
+
+.magnetic-effect {
+  animation: magneticPull 0.3s ease-out;
+}
+
+/* Responsive animations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .label-floating,
+  .input-focus-glow,
+  .success-pulse,
+  .error-shake,
+  .loading-pulse,
+  .form-slide-in,
+  .button-hover-effect,
+  .progress-fill,
+  .magnetic-effect {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Dark theme specific animations */
+@media (prefers-color-scheme: dark) {
+  .animate-fade-in {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .input-focus-glow {
+    animation-duration: 0.2s;
+  }
+  
+  .button-hover-effect:hover {
+    animation: none;
+    transform: scale(0.98);
+  }
+}
+
+/* Loading and Feedback Animations */
+
+/* Progress bar indeterminate animation */
+@keyframes progressIndeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ripple effect animation */
+@keyframes rippleEffect {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Feedback slide-in animation */
+@keyframes feedbackSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+.feedback-slide-in {
+  animation: feedbackSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Success checkmark animation */
+@keyframes successCheckmark {
+  0% {
+    transform: scale(0) rotate(45deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(45deg);
+  }
+  100% {
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+.success-checkmark {
+  animation: successCheckmark 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Error shake animation */
+@keyframes errorBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.error-bounce {
+  animation: errorBounce 0.6s ease-in-out;
+}
+
+/* Floating action button pulse */
+@keyframes fabPulse {
+  0% {
+    box-shadow: 0 4px 20px var(--fab-color, #7C3AED)40, 0 0 0 0 var(--fab-color, #7C3AED)20;
+  }
+  70% {
+    box-shadow: 0 4px 20px var(--fab-color, #7C3AED)40, 0 0 0 10px var(--fab-color, #7C3AED)00;
+  }
+  100% {
+    box-shadow: 0 4px 20px var(--fab-color, #7C3AED)40, 0 0 0 0 var(--fab-color, #7C3AED)00;
+  }
+}
+
+.fab-pulse {
+  animation: fabPulse 2s infinite;
+}
+
+/* Loading dots animation */
+@keyframes loadingDots {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.loading-dots {
+  display: inline-block;
+}
+
+.loading-dots::after {
+  content: '...';
+  animation: loadingDots 1.4s ease-in-out infinite both;
+}
+
+/* Progress bar glow effect */
+@keyframes progressGlow {
+  0% {
+    box-shadow: 0 0 5px var(--progress-color, #7C3AED)40;
+  }
+  50% {
+    box-shadow: 0 0 20px var(--progress-color, #7C3AED)60, 0 0 30px var(--progress-color, #7C3AED)40;
+  }
+  100% {
+    box-shadow: 0 0 5px var(--progress-color, #7C3AED)40;
+  }
+}
+
+.progress-glow {
+  animation: progressGlow 2s ease-in-out infinite;
+}
+
+/* Magnetic button effect */
+@keyframes magneticAttraction {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(var(--magnetic-x, 0), var(--magnetic-y, 0)) scale(1.05);
+  }
+  100% {
+    transform: translate(var(--magnetic-x, 0), var(--magnetic-y, 0)) scale(1.02);
+  }
+}
+
+.magnetic-attraction {
+  animation: magneticAttraction 0.3s ease-out;
+}
+
+/* Form submission success animation */
+@keyframes formSuccess {
+  0% {
+    transform: scale(1);
+    background-color: var(--success-color, #10B981);
+  }
+  50% {
+    transform: scale(1.05);
+    background-color: var(--success-color, #10B981);
+    box-shadow: 0 0 30px var(--success-color, #10B981)60;
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--success-color, #10B981);
+  }
+}
+
+.form-success {
+  animation: formSuccess 0.6s ease-in-out;
+}
+
+/* Form submission error animation */
+@keyframes formError {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-3px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(3px);
+  }
+}
+
+.form-error {
+  animation: formError 0.5s ease-in-out;
+}
+
+/* Tooltip fade-in animation */
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tooltip-fade-in {
+  animation: tooltipFadeIn 0.2s ease-out;
+}
+
+/* Button loading state */
+@keyframes buttonLoading {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.button-loading {
+  background: linear-gradient(90deg, var(--button-color, #7C3AED), var(--button-color-light, #8B5CF6), var(--button-color, #7C3AED));
+  background-size: 200% 100%;
+  animation: buttonLoading 2s ease-in-out infinite;
+}
+
+/* Accessibility: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .progressIndeterminate,
+  .spin,
+  .rippleEffect,
+  .feedback-slide-in,
+  .success-checkmark,
+  .error-bounce,
+  .fab-pulse,
+  .loading-dots,
+  .progress-glow,
+  .magnetic-attraction,
+  .form-success,
+  .form-error,
+  .tooltip-fade-in,
+  .button-loading {
+    animation: none;
+  }
+  
+  /* Provide static alternatives for reduced motion */
+  .loading-dots::after {
+    content: '...';
+    animation: none;
+  }
+  
+  .progress-glow {
+    box-shadow: 0 0 10px var(--progress-color, #7C3AED)40;
+  }
+}

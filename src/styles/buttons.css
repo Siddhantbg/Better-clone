@@ -1,0 +1,291 @@
+/* React Bits Button Styles */
+
+/* Magnetic Button Effects */
+.magnetic-button {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.magnetic-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Animated Button Base */
+.animated-button {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+}
+
+.animated-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none !important;
+}
+
+.animated-button:disabled:hover {
+  transform: none !important;
+}
+
+/* Floating Action Button */
+.floating-action-button {
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Gradient Button Animations */
+.gradient-button {
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+}
+
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+
+.bg-pos-100 {
+  background-position: 100% 50%;
+}
+
+.hover\:bg-pos-100:hover {
+  background-position: 100% 50%;
+}
+
+/* Enhanced Glow Effects */
+.glow-button {
+  position: relative;
+}
+
+.glow-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(45deg, transparent, currentColor, transparent);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-button:hover::before {
+  opacity: 0.8;
+}
+
+/* Ripple Effect Animation */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  animation: ripple 0.6s linear;
+}
+
+/* Button Hover States */
+.magnetic-button:hover {
+  transition: transform 0.1s ease-out;
+}
+
+.animated-button:hover {
+  transition: all 0.2s ease-out;
+}
+
+/* Click Feedback */
+.animated-button:active {
+  transform: scale(0.98);
+}
+
+.magnetic-button:active {
+  transform: scale(0.98);
+}
+
+/* Cyberpunk Button Styles */
+.cyberpunk-button {
+  position: relative;
+  background: linear-gradient(45deg, #7C3AED, #8B5CF6);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.cyberpunk-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #7C3AED, #8B5CF6, #F59E0B, #7C3AED);
+  border-radius: inherit;
+  z-index: -1;
+  animation: borderRotate 3s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Neon Button Effects */
+.neon-button {
+  color: #fff;
+  background: transparent;
+  border: 2px solid currentColor;
+  text-shadow: 0 0 10px currentColor;
+  box-shadow: 
+    inset 0 0 10px currentColor,
+    0 0 20px currentColor;
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  background: currentColor;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 
+    inset 0 0 20px rgba(0, 0, 0, 0.2),
+    0 0 30px currentColor,
+    0 0 40px currentColor;
+}
+
+/* Holographic Button */
+.holographic-button {
+  background: linear-gradient(45deg, 
+    hsl(240, 100%, 50%) 0%,
+    hsl(300, 100%, 50%) 25%,
+    hsl(0, 100%, 50%) 50%,
+    hsl(60, 100%, 50%) 75%,
+    hsl(120, 100%, 50%) 100%
+  );
+  background-size: 400% 400%;
+  animation: holographicShift 4s ease-in-out infinite;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes holographicShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Particle Button Effect */
+.particle-button {
+  position: relative;
+  overflow: visible;
+}
+
+.particle-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 10px 10px;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.particle-button:hover::after {
+  width: 200%;
+  height: 200%;
+  opacity: 0.1;
+}
+
+/* Glitch Button Effect */
+.glitch-button {
+  position: relative;
+}
+
+.glitch-button:hover {
+  animation: buttonGlitch 0.3s ease-in-out;
+}
+
+@keyframes buttonGlitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 768px) {
+  .magnetic-button {
+    /* Reduce magnetic effect on mobile */
+    transform: none !important;
+  }
+  
+  .floating-action-button {
+    /* Adjust FAB size on mobile */
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+/* Accessibility Improvements */
+.magnetic-button:focus,
+.animated-button:focus,
+.floating-action-button:focus {
+  outline: 2px solid #7C3AED;
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .magnetic-button,
+  .animated-button,
+  .gradient-button,
+  .glow-button {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  .magnetic-button:hover,
+  .animated-button:hover {
+    transform: none !important;
+  }
+}

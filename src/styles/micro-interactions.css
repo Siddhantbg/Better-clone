@@ -1,0 +1,435 @@
+/* Premium Micro-Interactions CSS */
+
+/* Enhanced button interactions */
+.btn-enhanced {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.18s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center;
+  will-change: transform, box-shadow;
+}
+
+.btn-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+}
+
+.btn-enhanced:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 8px 25px rgba(124, 58, 237, 0.25),
+    0 4px 10px rgba(124, 58, 237, 0.15),
+    0 0 0 1px rgba(124, 58, 237, 0.1);
+}
+
+.btn-enhanced:hover::before {
+  left: 100%;
+}
+
+.btn-enhanced:active {
+  transform: translateY(-1px) scale(0.98);
+  transition-duration: 0.08s;
+}
+
+/* Enhanced magnetic effect */
+.magnetic-enhanced {
+  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+/* Enhanced card interactions */
+.card-enhanced {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+.card-enhanced::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-enhanced:hover {
+  transform: translateY(-6px) rotateX(2deg) rotateY(2deg) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(124, 58, 237, 0.15),
+    0 0 0 1px rgba(124, 58, 237, 0.1);
+}
+
+.card-enhanced:hover::after {
+  opacity: 1;
+}
+
+/* Enhanced input focus effects */
+.input-enhanced {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, box-shadow, border-color;
+}
+
+.input-enhanced:focus {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 0 3px rgba(124, 58, 237, 0.3),
+    0 8px 16px rgba(124, 58, 237, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #7C3AED;
+}
+
+.input-enhanced::placeholder {
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.input-enhanced:focus::placeholder {
+  transform: translateY(-2px);
+  opacity: 0.7;
+}
+
+/* Enhanced loading states */
+.loading-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.05) 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.loading-pulse-enhanced {
+  animation: pulseEnhanced 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseEnhanced {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* Enhanced ripple effect */
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  transform: scale(0);
+  animation: rippleAnimation 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@keyframes rippleAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Enhanced glow effects */
+.glow-enhanced {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.glow-enhanced::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #7C3AED, #8B5CF6, #F59E0B, #7C3AED);
+  background-size: 300% 300%;
+  border-radius: inherit;
+  opacity: 0;
+  z-index: -1;
+  animation: glowRotate 3s ease-in-out infinite;
+  transition: opacity 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.glow-enhanced:hover::before {
+  opacity: 0.8;
+}
+
+@keyframes glowRotate {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced navigation transitions */
+.nav-item-enhanced {
+  position: relative;
+  transition: all 0.18s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, color;
+}
+
+.nav-item-enhanced::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #7C3AED, #8B5CF6);
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateX(-50%);
+  border-radius: 1px;
+}
+
+.nav-item-enhanced:hover {
+  transform: translateY(-1px);
+  color: #8B5CF6;
+}
+
+.nav-item-enhanced:hover::after {
+  width: 100%;
+}
+
+.nav-item-enhanced.active::after {
+  width: 100%;
+}
+
+/* Enhanced form validation feedback */
+.validation-enhanced {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.validation-success {
+  border-color: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.validation-error {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+/* Enhanced scroll indicators */
+.scroll-indicator-enhanced {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #7C3AED, #8B5CF6, #F59E0B);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.1s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 9999;
+}
+
+/* Enhanced tooltip animations */
+.tooltip-enhanced {
+  position: absolute;
+  background: rgba(15, 15, 35, 0.95);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-enhanced.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced progress indicators */
+.progress-enhanced {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 8px;
+}
+
+.progress-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #7C3AED, #8B5CF6);
+  border-radius: inherit;
+  transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+}
+
+.progress-enhanced.indeterminate::before {
+  width: 30% !important;
+  animation: progressSlide 2s ease-in-out infinite;
+}
+
+@keyframes progressSlide {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Enhanced modal transitions */
+.modal-enhanced {
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal-enhanced.show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.modal-backdrop-enhanced {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal-backdrop-enhanced.show {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .btn-enhanced:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+  
+  .card-enhanced:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .magnetic-enhanced {
+    /* Disable magnetic effects on mobile */
+    transform: none !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .btn-enhanced,
+  .card-enhanced,
+  .input-enhanced,
+  .nav-item-enhanced,
+  .validation-enhanced,
+  .tooltip-enhanced,
+  .modal-enhanced,
+  .modal-backdrop-enhanced {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .loading-shimmer,
+  .loading-pulse-enhanced,
+  .ripple-effect,
+  .glow-enhanced::before,
+  .progress-enhanced.indeterminate::before {
+    animation: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-enhanced:hover,
+  .card-enhanced:hover,
+  .input-enhanced:focus {
+    box-shadow: 0 0 0 2px currentColor !important;
+  }
+  
+  .glow-enhanced::before {
+    display: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .btn-enhanced,
+  .card-enhanced,
+  .input-enhanced,
+  .nav-item-enhanced,
+  .validation-enhanced,
+  .tooltip-enhanced,
+  .modal-enhanced,
+  .loading-shimmer,
+  .loading-pulse-enhanced,
+  .ripple-effect,
+  .glow-enhanced::before,
+  .progress-enhanced,
+  .scroll-indicator-enhanced {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}

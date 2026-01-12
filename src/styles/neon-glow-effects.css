@@ -1,0 +1,451 @@
+/* Neon Glow Effects System for Modern Crypto UI */
+
+/* Base neon glow variables */
+:root {
+  --neon-primary: #7C3AED;
+  --neon-secondary: #8B5CF6;
+  --neon-accent: #F59E0B;
+  --neon-success: #10B981;
+  --neon-warning: #F59E0B;
+  --neon-error: #EF4444;
+  --neon-info: #3B82F6;
+  
+  /* Glow intensity levels */
+  --glow-subtle: 0 0 10px;
+  --glow-medium: 0 0 20px;
+  --glow-strong: 0 0 30px;
+  --glow-intense: 0 0 40px;
+  
+  /* Multi-layer glow effects */
+  --glow-multi-subtle: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor;
+    
+  --glow-multi-medium: 
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor,
+    0 0 40px currentColor;
+    
+  --glow-multi-strong: 
+    0 0 15px currentColor,
+    0 0 30px currentColor,
+    0 0 45px currentColor,
+    0 0 60px currentColor,
+    0 0 75px currentColor;
+}
+
+/* Base neon glow class */
+.neon-glow {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Primary neon glow effects */
+.neon-glow-primary {
+  color: var(--neon-primary);
+  text-shadow: var(--glow-multi-subtle);
+  box-shadow: var(--glow-subtle) var(--neon-primary);
+}
+
+.neon-glow-primary:hover {
+  text-shadow: var(--glow-multi-medium);
+  box-shadow: var(--glow-multi-medium) var(--neon-primary);
+  transform: translateY(-2px);
+}
+
+/* Secondary neon glow effects */
+.neon-glow-secondary {
+  color: var(--neon-secondary);
+  text-shadow: var(--glow-multi-subtle);
+  box-shadow: var(--glow-subtle) var(--neon-secondary);
+}
+
+.neon-glow-secondary:hover {
+  text-shadow: var(--glow-multi-medium);
+  box-shadow: var(--glow-multi-medium) var(--neon-secondary);
+  transform: translateY(-2px);
+}
+
+/* Accent neon glow effects */
+.neon-glow-accent {
+  color: var(--neon-accent);
+  text-shadow: var(--glow-multi-subtle);
+  box-shadow: var(--glow-subtle) var(--neon-accent);
+}
+
+.neon-glow-accent:hover {
+  text-shadow: var(--glow-multi-medium);
+  box-shadow: var(--glow-multi-medium) var(--neon-accent);
+  transform: translateY(-2px);
+}
+
+/* Interactive button glow effects */
+.neon-button {
+  background: transparent;
+  border: 2px solid currentColor;
+  color: var(--neon-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    inset 0 0 0 0 currentColor,
+    var(--glow-subtle) currentColor;
+  overflow: hidden;
+  position: relative;
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.neon-button:hover {
+  box-shadow: 
+    inset 0 0 0 2px currentColor,
+    var(--glow-multi-medium) currentColor;
+  transform: translateY(-3px) scale(1.02);
+}
+
+.neon-button:hover::before {
+  left: 100%;
+}
+
+.neon-button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Pulsing glow animation */
+.neon-pulse {
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: var(--glow-subtle) currentColor;
+    text-shadow: var(--glow-multi-subtle);
+  }
+  100% {
+    box-shadow: var(--glow-strong) currentColor;
+    text-shadow: var(--glow-multi-medium);
+  }
+}
+
+/* Breathing glow animation */
+.neon-breathe {
+  animation: neonBreathe 3s ease-in-out infinite;
+}
+
+@keyframes neonBreathe {
+  0%, 100% {
+    box-shadow: var(--glow-subtle) currentColor;
+    opacity: 0.8;
+  }
+  50% {
+    box-shadow: var(--glow-medium) currentColor;
+    opacity: 1;
+  }
+}
+
+/* Flickering glow animation */
+.neon-flicker {
+  animation: neonFlicker 1.5s linear infinite;
+}
+
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    box-shadow: var(--glow-multi-medium) currentColor;
+    text-shadow: var(--glow-multi-medium);
+  }
+  20%, 24%, 55% {
+    box-shadow: var(--glow-subtle) currentColor;
+    text-shadow: var(--glow-multi-subtle);
+  }
+}
+
+/* Intensity variations */
+.neon-glow-subtle {
+  box-shadow: var(--glow-subtle) currentColor;
+  text-shadow: var(--glow-multi-subtle);
+}
+
+.neon-glow-medium {
+  box-shadow: var(--glow-medium) currentColor;
+  text-shadow: var(--glow-multi-medium);
+}
+
+.neon-glow-strong {
+  box-shadow: var(--glow-strong) currentColor;
+  text-shadow: var(--glow-multi-strong);
+}
+
+.neon-glow-intense {
+  box-shadow: var(--glow-intense) currentColor;
+  text-shadow: var(--glow-multi-strong);
+}
+
+/* Hover intensity variations */
+.neon-hover-subtle:hover {
+  box-shadow: var(--glow-medium) currentColor;
+}
+
+.neon-hover-medium:hover {
+  box-shadow: var(--glow-strong) currentColor;
+}
+
+.neon-hover-strong:hover {
+  box-shadow: var(--glow-intense) currentColor;
+}
+
+.neon-hover-intense:hover {
+  box-shadow: 
+    var(--glow-intense) currentColor,
+    0 0 60px currentColor,
+    0 0 80px currentColor;
+}
+
+/* Card glow effects */
+.neon-card {
+  border: 1px solid currentColor;
+  border-radius: 12px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    var(--glow-subtle) currentColor,
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.neon-card:hover {
+  box-shadow: 
+    var(--glow-multi-medium) currentColor,
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Text glow effects */
+.neon-text {
+  color: currentColor;
+  text-shadow: var(--glow-multi-subtle);
+  transition: text-shadow 0.3s ease;
+}
+
+.neon-text:hover {
+  text-shadow: var(--glow-multi-medium);
+}
+
+/* Border glow effects */
+.neon-border {
+  border: 2px solid currentColor;
+  box-shadow: 
+    inset var(--glow-subtle) currentColor,
+    var(--glow-subtle) currentColor;
+  transition: all 0.3s ease;
+}
+
+.neon-border:hover {
+  box-shadow: 
+    inset var(--glow-medium) currentColor,
+    var(--glow-medium) currentColor;
+}
+
+/* Icon glow effects */
+.neon-icon {
+  filter: drop-shadow(var(--glow-subtle) currentColor);
+  transition: filter 0.3s ease;
+}
+
+.neon-icon:hover {
+  filter: drop-shadow(var(--glow-medium) currentColor);
+}
+
+/* Input field glow effects */
+.neon-input {
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(124, 58, 237, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: var(--glow-subtle) rgba(124, 58, 237, 0.3);
+}
+
+.neon-input:focus {
+  outline: none;
+  border-color: var(--neon-primary);
+  box-shadow: var(--glow-medium) var(--neon-primary);
+}
+
+.neon-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Loading spinner glow */
+.neon-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(124, 58, 237, 0.3);
+  border-top: 3px solid var(--neon-primary);
+  border-radius: 50%;
+  animation: neonSpin 1s linear infinite;
+  box-shadow: var(--glow-medium) var(--neon-primary);
+}
+
+@keyframes neonSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Progress bar glow */
+.neon-progress {
+  width: 100%;
+  height: 8px;
+  background: rgba(124, 58, 237, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset var(--glow-subtle) rgba(124, 58, 237, 0.3);
+}
+
+.neon-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  box-shadow: var(--glow-medium) var(--neon-primary);
+}
+
+/* Notification glow effects */
+.neon-notification {
+  padding: 16px 20px;
+  border-radius: 8px;
+  border-left: 4px solid currentColor;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    var(--glow-subtle) currentColor,
+    0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.neon-notification:hover {
+  box-shadow: 
+    var(--glow-medium) currentColor,
+    0 6px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Success, warning, error variants */
+.neon-success {
+  color: var(--neon-success);
+}
+
+.neon-warning {
+  color: var(--neon-warning);
+}
+
+.neon-error {
+  color: var(--neon-error);
+}
+
+.neon-info {
+  color: var(--neon-info);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .neon-glow-primary:hover,
+  .neon-glow-secondary:hover,
+  .neon-glow-accent:hover {
+    transform: translateY(-1px);
+  }
+  
+  .neon-button:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+  
+  .neon-card:hover {
+    transform: translateY(-3px) scale(1.01);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .neon-pulse,
+  .neon-breathe,
+  .neon-flicker,
+  .neon-spinner {
+    animation: none;
+  }
+  
+  .neon-glow,
+  .neon-button,
+  .neon-card,
+  .neon-text,
+  .neon-border,
+  .neon-icon,
+  .neon-input,
+  .neon-notification {
+    transition: none;
+  }
+  
+  .neon-glow-primary:hover,
+  .neon-glow-secondary:hover,
+  .neon-glow-accent:hover,
+  .neon-button:hover,
+  .neon-card:hover,
+  .neon-notification:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .neon-glow,
+  .neon-button,
+  .neon-card,
+  .neon-text,
+  .neon-border {
+    box-shadow: none;
+    text-shadow: none;
+  }
+  
+  .neon-button {
+    background: currentColor;
+    color: black;
+  }
+  
+  .neon-input {
+    border-width: 3px;
+    box-shadow: none;
+  }
+}
+
+/* Utility classes for quick application */
+.glow-on-hover:hover {
+  box-shadow: var(--glow-medium) currentColor;
+}
+
+.glow-always {
+  box-shadow: var(--glow-medium) currentColor;
+}
+
+.glow-pulse {
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+.glow-breathe {
+  animation: neonBreathe 3s ease-in-out infinite;
+}
+
+.glow-flicker {
+  animation: neonFlicker 1.5s linear infinite;
+}

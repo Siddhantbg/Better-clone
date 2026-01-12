@@ -1,0 +1,302 @@
+/* Crypto Data Visualizations Styles */
+
+.crypto-data-visualization {
+  position: relative;
+  display: inline-block;
+}
+
+.crypto-data-visualization canvas {
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(15, 15, 35, 0.8) 0%, rgba(26, 27, 58, 0.6) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+/* Animated Borders Container */
+.animated-borders-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-borders-container canvas {
+  border-radius: inherit;
+}
+
+/* Crypto Visual Elements */
+.crypto-price-ticker {
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(15, 15, 35, 0.9) 0%, rgba(26, 27, 58, 0.7) 100%);
+  backdrop-filter: blur(16px);
+  border-radius: 12px;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.1);
+}
+
+.price-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.price-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.2);
+  background: rgba(124, 58, 237, 0.15);
+}
+
+/* Chart Container Styles */
+.chart-container {
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(15, 15, 35, 0.95) 0%, rgba(26, 27, 58, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.chart-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(124, 58, 237, 0.05) 50%, transparent 70%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Chart Title Styles */
+.chart-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+  background: linear-gradient(90deg, #7C3AED, #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Network Visualization Styles */
+.blockchain-network {
+  position: relative;
+  padding: 16px;
+  background: rgba(15, 15, 35, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.blockchain-network canvas {
+  filter: drop-shadow(0 4px 8px rgba(124, 58, 237, 0.3));
+}
+
+/* Hash Visualization Styles */
+.hash-visualization {
+  padding: 12px 16px;
+  background: rgba(26, 27, 58, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  font-family: 'Courier New', monospace;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+/* Mining Animation Styles */
+.mining-animation {
+  position: relative;
+  display: inline-block;
+}
+
+.mining-animation canvas {
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.5));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .crypto-data-visualization canvas {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .chart-container {
+    padding: 16px;
+    margin: 8px;
+  }
+  
+  .crypto-price-ticker {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .chart-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  
+  .crypto-price-ticker {
+    padding: 12px;
+  }
+  
+  .price-item {
+    padding: 6px 10px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(124, 58, 237, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.8);
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Interactive Elements */
+.interactive-chart {
+  cursor: crosshair;
+  transition: transform 0.2s ease;
+}
+
+.interactive-chart:hover {
+  transform: scale(1.02);
+}
+
+/* Glow Effects */
+.neon-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.gradient-background {
+  background: linear-gradient(-45deg, #7C3AED, #8B5CF6, #F59E0B, #7C3AED);
+  background-size: 400% 400%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .crypto-data-visualization canvas,
+  .animated-borders-container canvas,
+  .mining-animation canvas,
+  .blockchain-network canvas {
+    animation: none;
+  }
+  
+  .price-item {
+    transition: none;
+  }
+  
+  .interactive-chart:hover {
+    transform: none;
+  }
+  
+  .neon-glow {
+    animation: none;
+    box-shadow: 0 0 5px rgba(124, 58, 237, 0.5);
+  }
+  
+  .gradient-background {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .chart-container {
+    border: 2px solid #ffffff;
+    background: #000000;
+  }
+  
+  .crypto-price-ticker {
+    border: 2px solid #ffffff;
+    background: #000000;
+  }
+  
+  .price-item {
+    background: #333333;
+    color: #ffffff;
+  }
+  
+  .chart-title {
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+  }
+}
+
+/* Loading States */
+.chart-loading {
+  position: relative;
+  opacity: 0.7;
+}
+
+.chart-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid #7C3AED;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error States */
+.chart-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #ff6b6b;
+  font-size: 14px;
+  text-align: center;
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  border-radius: 8px;
+}
+
+/* Tooltip Styles */
+.chart-tooltip {
+  position: absolute;
+  background: rgba(15, 15, 35, 0.95);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}

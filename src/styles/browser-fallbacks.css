@@ -1,0 +1,543 @@
+/* Browser Compatibility Fallbacks */
+/* CSS-only animation fallbacks for older browsers and reduced capabilities */
+
+/* Base fallback styles - applied when JavaScript is disabled */
+.no-js {
+  /* Ensure content is visible without JavaScript */
+}
+
+.no-js .particle-system,
+.no-js .animated-gradient-mesh,
+.no-js .orb-container {
+  display: none;
+}
+
+.no-js .glass-card {
+  background: rgba(26, 27, 58, 0.9);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+/* CSS Grid fallbacks */
+.no-css-grid .bento-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.no-css-grid .bento-item {
+  flex: 1 1 300px;
+  margin: 1rem;
+}
+
+/* Flexbox fallbacks */
+.no-flexbox .flex {
+  display: block;
+}
+
+.no-flexbox .flex-row > * {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.no-flexbox .flex-col > * {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.no-flexbox .justify-center {
+  text-align: center;
+}
+
+.no-flexbox .items-center > * {
+  vertical-align: middle;
+}
+
+/* Transform fallbacks */
+.no-transforms .card-3d-hover:hover {
+  margin-top: -4px;
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+}
+
+.no-transforms .magnetic-button:hover {
+  margin-top: -2px;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.no-transforms .scale-hover:hover {
+  padding: 1.1em 2.2em;
+}
+
+/* Transition fallbacks */
+.no-transitions .hover-effect:hover {
+  /* Instant state changes without transitions */
+  background-color: #8B5CF6;
+  color: #FFFFFF;
+}
+
+.no-transitions .fade-in {
+  opacity: 1;
+}
+
+.no-transitions .slide-up {
+  transform: none;
+}
+
+/* Animation fallbacks */
+.no-animations .gradient-hero-animated,
+.no-animations .gradient-button-animated,
+.no-animations .gradient-text-animated,
+.no-animations .gradient-border-animated::before,
+.no-animations .gradient-mesh-background {
+  animation: none;
+}
+
+.no-animations .pulse {
+  animation: none;
+}
+
+.no-animations .bounce {
+  animation: none;
+}
+
+.no-animations .spin {
+  animation: none;
+}
+
+/* Backdrop filter fallbacks */
+.no-backdrop-filter .glass-card {
+  background: rgba(26, 27, 58, 0.95);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.no-backdrop-filter .navbar-blur {
+  background: rgba(15, 15, 35, 0.95);
+}
+
+.no-backdrop-filter .modal-backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Custom properties fallbacks */
+.no-custom-properties {
+  /* Hardcoded color values for browsers without CSS custom properties */
+}
+
+.no-custom-properties .text-primary {
+  color: #7C3AED;
+}
+
+.no-custom-properties .text-secondary {
+  color: #8B5CF6;
+}
+
+.no-custom-properties .bg-primary {
+  background-color: #7C3AED;
+}
+
+.no-custom-properties .bg-secondary {
+  background-color: #8B5CF6;
+}
+
+.no-custom-properties .bg-surface {
+  background-color: #1A1B3A;
+}
+
+.no-custom-properties .bg-background {
+  background-color: #0F0F23;
+}
+
+.no-custom-properties .border-primary {
+  border-color: #7C3AED;
+}
+
+.no-custom-properties .gradient-hero-primary {
+  background: radial-gradient(circle at 50% 50%, #7C3AED 0%, #8B5CF6 50%, #0F0F23 100%);
+}
+
+.no-custom-properties .gradient-button-primary {
+  background: linear-gradient(45deg, #7C3AED, #8B5CF6);
+}
+
+.no-custom-properties .gradient-text-primary {
+  background: linear-gradient(90deg, #7C3AED, #8B5CF6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* WebGL fallbacks */
+.no-webgl .particle-system {
+  display: none;
+}
+
+.no-webgl .webgl-background {
+  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+}
+
+.no-webgl .orb-container {
+  display: none;
+}
+
+.no-webgl .orb-fallback {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(124, 58, 237, 0.6), rgba(139, 92, 246, 0.3), transparent);
+  filter: blur(20px);
+  opacity: 0.7;
+}
+
+/* Intersection Observer fallbacks */
+.no-intersection-observer .fade-in-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.no-intersection-observer .slide-up-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Old browser comprehensive fallbacks */
+.old-browser {
+  /* Simplified styles for very old browsers */
+}
+
+.old-browser .gradient-hero-animated,
+.old-browser .gradient-button-animated,
+.old-browser .gradient-text-animated {
+  animation: none !important;
+  background: #7C3AED !important;
+}
+
+.old-browser .glass-card {
+  background: rgba(26, 27, 58, 0.9) !important;
+  backdrop-filter: none !important;
+  border: 1px solid #7C3AED !important;
+}
+
+.old-browser .particle-system,
+.old-browser .animated-gradient-mesh,
+.old-browser .orb-container,
+.old-browser .webgl-canvas {
+  display: none !important;
+}
+
+.old-browser .card-3d-hover {
+  transform: none !important;
+}
+
+.old-browser .card-3d-hover:hover {
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3) !important;
+}
+
+.old-browser .magnetic-button {
+  transform: none !important;
+}
+
+.old-browser .magnetic-button:hover {
+  background: #8B5CF6 !important;
+}
+
+.old-browser .neon-glow {
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3) !important;
+}
+
+.old-browser .complex-animation {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* CSS-only simple animations for fallback */
+@keyframes simpleFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes simpleSlideUp {
+  from { 
+    opacity: 0;
+    margin-top: 20px;
+  }
+  to { 
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@keyframes simpleScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes simpleGlow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(124, 58, 237, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
+  }
+}
+
+@keyframes simpleGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-15px) translateX(3px);
+    opacity: 1;
+  }
+}
+
+/* Apply simple animations when complex ones are not supported */
+.css-animations .simple-fade-in {
+  animation: simpleFadeIn 0.6s ease-out;
+}
+
+.css-animations .simple-slide-up {
+  animation: simpleSlideUp 0.6s ease-out;
+}
+
+.css-animations .simple-glow {
+  animation: simpleGlow 2s ease-in-out infinite;
+}
+
+.css-animations .simple-gradient {
+  background-size: 200% 200%;
+  animation: simpleGradientShift 3s ease-in-out infinite;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .gradient-text-primary,
+  .gradient-text-animated {
+    -webkit-text-fill-color: #FFFFFF !important;
+    background: none !important;
+    color: #FFFFFF !important;
+  }
+
+  .glass-card {
+    background: #1A1B3A !important;
+    border: 2px solid #FFFFFF !important;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 0 2px #FFFFFF !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .particle-system,
+  .animated-gradient-mesh,
+  .orb-container,
+  .webgl-canvas,
+  .video-background {
+    display: none !important;
+  }
+
+  .glass-card {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+  }
+
+  .gradient-text-primary,
+  .gradient-text-animated {
+    -webkit-text-fill-color: #000000 !important;
+    background: none !important;
+    color: #000000 !important;
+  }
+}
+
+/* Reduced motion support (enhanced) */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-hero-animated,
+  .gradient-button-animated,
+  .gradient-text-animated,
+  .gradient-border-animated::before,
+  .gradient-mesh-background,
+  .particle-system,
+  .orb-container,
+  .complex-animation {
+    animation: none !important;
+  }
+
+  .card-3d-hover,
+  .magnetic-button,
+  .scale-hover {
+    transform: none !important;
+  }
+
+  .transition-all,
+  .transition-transform,
+  .transition-opacity {
+    transition: none !important;
+  }
+
+  /* Provide instant feedback instead of animations */
+  .hover-effect:hover {
+    background-color: #8B5CF6;
+    color: #FFFFFF;
+  }
+
+  .focus-effect:focus {
+    outline: 2px solid #7C3AED;
+    outline-offset: 2px;
+  }
+}
+
+/* Mobile-specific fallbacks */
+@media (max-width: 768px) {
+  .mobile-hide-complex .particle-system,
+  .mobile-hide-complex .animated-gradient-mesh,
+  .mobile-hide-complex .orb-container {
+    display: none;
+  }
+
+  .mobile-simplify .complex-animation {
+    animation: none;
+  }
+
+  .mobile-simplify .card-3d-hover {
+    transform: none;
+  }
+
+  .mobile-simplify .glass-card {
+    background: rgba(26, 27, 58, 0.95);
+    backdrop-filter: none;
+  }
+}
+
+/* Low-end device detection and fallbacks */
+@media (max-width: 480px) and (max-height: 800px) {
+  .low-end-hide .particle-system,
+  .low-end-hide .animated-gradient-mesh,
+  .low-end-hide .orb-container,
+  .low-end-hide .webgl-canvas {
+    display: none !important;
+  }
+
+  .low-end-simplify .gradient-hero-animated,
+  .low-end-simplify .gradient-button-animated,
+  .low-end-simplify .gradient-text-animated {
+    animation: none !important;
+    background: #7C3AED !important;
+  }
+}
+
+/* Internet Explorer specific fallbacks */
+.ie .glass-card {
+  background: #1A1B3A;
+  border: 1px solid #7C3AED;
+  filter: alpha(opacity=90);
+}
+
+.ie .gradient-text-primary {
+  color: #7C3AED;
+}
+
+.ie .flex {
+  display: table;
+  width: 100%;
+}
+
+.ie .flex > * {
+  display: table-cell;
+  vertical-align: top;
+}
+
+/* Safari-specific fixes */
+.safari .glass-card {
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.safari .gradient-text-primary {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Firefox-specific fixes */
+.firefox .glass-card {
+  background: rgba(26, 27, 58, 0.9);
+}
+
+/* Edge-specific fixes */
+.edge .particle-system {
+  /* Edge-specific optimizations */
+}
+
+/* Feature detection utility classes */
+.supports-grid {
+  display: grid;
+}
+
+.supports-flexbox {
+  display: flex;
+}
+
+.supports-transforms {
+  transform: translateZ(0);
+}
+
+.supports-animations {
+  animation-duration: 0.01ms;
+  animation-iteration-count: 1;
+}
+
+.supports-backdrop-filter {
+  backdrop-filter: blur(0px);
+}
+
+/* Graceful degradation message for very old browsers */
+.browser-warning {
+  display: none;
+  background: #F59E0B;
+  color: #000000;
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.old-browser .browser-warning {
+  display: block;
+}
+
+.browser-warning-text {
+  font-weight: bold;
+}
+
+.browser-warning-close {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  float: right;
+  font-size: 1.2em;
+  font-weight: bold;
+}

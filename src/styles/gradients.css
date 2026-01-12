@@ -1,0 +1,254 @@
+/* Gradient Animation Styles for Modern Crypto UI */
+
+/* Base gradient animation keyframes */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientRotate {
+  0% {
+    background-position: 0% 0%;
+    transform: rotate(0deg);
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+    transform: rotate(180deg);
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradientPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Gradient utility classes */
+.gradient-hero-primary {
+  background: var(--gradient-hero, radial-gradient(circle at 50% 50%, #7C3AED 0%, #8B5CF6 50%, #0F0F23 100%));
+}
+
+.gradient-hero-animated {
+  background: radial-gradient(circle at 50% 50%, #7C3AED 0%, #8B5CF6 30%, #F59E0B 60%, #0F0F23 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease-in-out infinite alternate;
+}
+
+.gradient-card-glass {
+  background: linear-gradient(135deg, rgba(26, 27, 58, 0.8) 0%, rgba(15, 15, 35, 0.4) 100%);
+}
+
+.gradient-card-hover {
+  background: linear-gradient(135deg, rgba(26, 27, 58, 0.8) 0%, rgba(15, 15, 35, 0.4) 100%);
+  transition: background 0.3s ease;
+}
+
+.gradient-card-hover:hover {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(15, 15, 35, 0.6) 100%);
+}
+
+.gradient-button-primary {
+  background: linear-gradient(45deg, #7C3AED, #8B5CF6);
+  transition: all 0.3s ease;
+}
+
+.gradient-button-primary:hover {
+  background: linear-gradient(45deg, #8B5CF6, #7C3AED, #F59E0B);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+}
+
+.gradient-button-animated {
+  background: linear-gradient(45deg, #7C3AED, #8B5CF6, #F59E0B, #7C3AED);
+  background-size: 300% 300%;
+  animation: gradientShift 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-button-animated:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+}
+
+.gradient-text-primary {
+  background: linear-gradient(90deg, #7C3AED, #8B5CF6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+}
+
+.gradient-text-animated {
+  background: linear-gradient(90deg, #7C3AED, #8B5CF6, #F59E0B, #7C3AED);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: gradientShift 2s ease-in-out infinite;
+}
+
+.gradient-border {
+  position: relative;
+  background: var(--color-surface);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(90deg, #7C3AED, #8B5CF6, #F59E0B);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+.gradient-border-animated::before {
+  background: linear-gradient(90deg, #7C3AED, #8B5CF6, #F59E0B, #7C3AED);
+  background-size: 300% 300%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.gradient-mesh-background {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.2) 0%, transparent 50%);
+  animation: gradientPulse 6s ease-in-out infinite;
+}
+
+.gradient-overlay {
+  background: linear-gradient(180deg, rgba(15, 15, 35, 0) 0%, rgba(15, 15, 35, 0.8) 100%);
+}
+
+/* Smooth transition utilities */
+.gradient-transition {
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gradient-transition-fast {
+  transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gradient-transition-slow {
+  transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive gradient adjustments */
+@media (max-width: 768px) {
+  .gradient-hero-animated {
+    animation-duration: 6s;
+  }
+  
+  .gradient-button-animated {
+    animation-duration: 4s;
+  }
+  
+  .gradient-text-animated {
+    animation-duration: 3s;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-hero-animated,
+  .gradient-button-animated,
+  .gradient-text-animated,
+  .gradient-border-animated::before,
+  .gradient-mesh-background {
+    animation: none;
+  }
+  
+  .gradient-transition,
+  .gradient-transition-fast,
+  .gradient-transition-slow {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .gradient-text-primary,
+  .gradient-text-animated {
+    -webkit-text-fill-color: #FFFFFF;
+    background: none;
+  }
+}
+
+/* Custom gradient utilities for specific components */
+.hero-gradient {
+  background: radial-gradient(circle at 50% 50%, #7C3AED 0%, #8B5CF6 30%, #0F0F23 70%);
+  background-size: 150% 150%;
+  animation: gradientShift 8s ease-in-out infinite alternate;
+}
+
+.card-gradient-hover {
+  background: linear-gradient(135deg, rgba(26, 27, 58, 0.8) 0%, rgba(15, 15, 35, 0.4) 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-gradient-hover:hover {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(15, 15, 35, 0.6) 100%);
+  transform: translateY(-4px);
+}
+
+.button-gradient-magnetic {
+  background: linear-gradient(45deg, #7C3AED, #8B5CF6);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-gradient-magnetic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.button-gradient-magnetic:hover::before {
+  left: 100%;
+}
+
+.button-gradient-magnetic:hover {
+  background: linear-gradient(45deg, #8B5CF6, #F59E0B, #7C3AED);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+}
