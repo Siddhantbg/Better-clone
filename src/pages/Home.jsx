@@ -135,30 +135,30 @@ const Home = () => {
         {/* Interactive Background Effects - Z-Index 2 */}
         {isHighPerformance && isIntersecting && (
           <div className="absolute inset-0 z-[2]">
-            {/* Particle System Background */}
+            {/* Enhanced Particle System Background */}
             <Suspense fallback={null}>
               <ParticleSystem
-                particleCount={30}
+                particleCount={80}
                 mouseInteraction={true}
-                particleSize={1.5}
-                connectionDistance={80}
-                particleSpeed={0.15}
-                colors={['#7C3AED', '#8B5CF6', '#A855F7', '#C084FC']}
+                particleSize={2.5}
+                connectionDistance={120}
+                particleSpeed={0.25}
+                colors={['#7C3AED', '#8B5CF6', '#A855F7', '#C084FC', '#DDD6FE']}
               />
             </Suspense>
             
-            {/* Orb Background Effect */}
-            <div className="absolute inset-0 opacity-15">
+            {/* Enhanced Orb Background Effect */}
+            <div className="absolute inset-0 opacity-40">
               <Suspense fallback={null}>
                 <Orb
-                  hoverIntensity={0.2}
+                  hoverIntensity={0.6}
                   rotateOnHover={true}
                   hue={280}
                   forceHoverState={false}
                   backgroundColor="transparent"
                   colorScheme="violet"
-                  proximityRadius={0.8}
-                  intensityMultiplier={0.6}
+                  proximityRadius={1.2}
+                  intensityMultiplier={1.4}
                 />
               </Suspense>
             </div>
@@ -171,16 +171,16 @@ const Home = () => {
           {/* Header Text Section - Fixed positioning with higher z-index */}
           <div className="flex-shrink-0 text-center pt-4 md:pt-8 lg:pt-12 pb-2 relative z-20">
             <div className="hidden md:block">
-              <h1 className="text-white text-[50px] lg:text-[70px] xl:text-[85px] font-bold leading-[0.9] tracking-tight drop-shadow-lg">
+              <h1 className="text-white text-[52px] lg:text-[72px] xl:text-[88px] font-bold leading-[0.85] tracking-tight drop-shadow-2xl text-shadow-strong">
                 Crypto Payment
               </h1>
-              <h2 className="text-white text-[50px] lg:text-[70px] xl:text-[85px] font-bold leading-[0.9] tracking-tight -mt-2 drop-shadow-lg">
+              <h2 className="text-white text-[52px] lg:text-[72px] xl:text-[88px] font-bold leading-[0.85] tracking-tight -mt-1 drop-shadow-2xl text-shadow-strong">
                 made simple
               </h2>
             </div>
 
             <div className="block md:hidden px-4">
-              <h1 className="text-white text-[28px] xs:text-[32px] sm:text-[36px] font-bold leading-tight drop-shadow-lg">
+              <h1 className="text-white text-[30px] xs:text-[34px] sm:text-[38px] font-bold leading-[0.9] drop-shadow-2xl text-shadow-strong">
                 Crypto Payment <br />
                 made simple
               </h1>
@@ -206,7 +206,7 @@ const Home = () => {
               {/* Start Approval Button */}
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
                 <button
-                  className="text-white font-medium px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-full text-sm md:text-base lg:text-lg transition whitespace-nowrap shadow-lg gradient-button-primary neon-glow hover:scale-105 transform duration-300"
+                  className="text-white font-semibold px-8 md:px-10 lg:px-12 py-4 md:py-5 rounded-full text-base md:text-lg lg:text-xl transition whitespace-nowrap shadow-2xl gradient-button-primary neon-glow hover:scale-110 transform duration-300 border border-white/20"
                   style={getGradientStyles('button', 'primary')}
                   data-enhance="button"
                   data-tooltip="Start your crypto approval process"
@@ -214,9 +214,9 @@ const Home = () => {
                 >
                   Start my approval
                 </button>
-                <div className="flex items-center gap-2 mt-2 text-white/90">
-                  <FaStopwatch className="text-xs md:text-sm" />
-                  <span className="text-[11px] md:text-[13px] lg:text-[14px] geist-light">
+                <div className="flex items-center gap-2 mt-3 text-white/90">
+                  <FaStopwatch className="text-sm md:text-base animate-pulse" />
+                  <span className="text-[12px] md:text-[14px] lg:text-[15px] geist-light font-medium">
                     3 min | No credit impact
                   </span>
                 </div>
@@ -242,7 +242,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Decorative Elements - Z-Index 15 - Removed to clean up navbar area */}
+        {/* Decorative Elements - Z-Index 15 - Clean minimal design */}
       </div>
 
       <div className="bg-[#fdfcf9] relative">

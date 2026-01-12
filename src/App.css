@@ -1,0 +1,51 @@
+/* Enhanced text shadow for better visibility */
+.text-shadow-strong {
+  text-shadow: 
+    0 0 10px rgba(124, 58, 237, 0.8),
+    0 0 20px rgba(124, 58, 237, 0.6),
+    0 0 30px rgba(124, 58, 237, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Enhanced gradient button with glow */
+.gradient-button-primary {
+  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #C084FC 100%);
+  box-shadow: 
+    0 0 20px rgba(124, 58, 237, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.gradient-button-primary:hover {
+  box-shadow: 
+    0 0 30px rgba(124, 58, 237, 0.6),
+    0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Glass card effect */
+.glass-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Neon glow effect */
+.neon-glow {
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+  from {
+    box-shadow: 
+      0 0 20px rgba(124, 58, 237, 0.4),
+      0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  to {
+    box-shadow: 
+      0 0 30px rgba(124, 58, 237, 0.6),
+      0 0 40px rgba(124, 58, 237, 0.3),
+      0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+}
