@@ -8,11 +8,11 @@ import SecHome from '../components/SecHome.jsx';
 import RouteTransitionWrapper from '../components/RouteTransitionWrapper';
 import { getGradientStyles } from '../utils/gradients.js';
 import { getGradientMeshConfig } from '../utils/gradientMesh.js';
+import LightPillar from '../components/LightPillar';
 import '../styles/animated-gradient-mesh.css';
 import '../styles/crypto-visualizations.css';
 
 // Lazy load heavy animation components for better performance
-const Orb = lazy(() => import('../components/Orb'));
 const ParticleSystem = lazy(() => import('../components/ParticleSystem'));
 const AnimatedGradientMesh = lazy(() => import('../components/AnimatedGradientMesh'));
 const CryptoDataVisualization = lazy(() => import('../components/CryptoDataVisualization'));
@@ -118,18 +118,35 @@ const Home = () => {
 
         {/* Background Layer - Z-Index 1 */}
         <div className="absolute inset-0 z-[1]">
+          {/* LightPillar Background Effect - Main centerpiece */}
+          <div className="absolute inset-0">
+            <LightPillar
+              topColor="#5227FF"
+              bottomColor="#FF9FFC"
+              intensity={1.2}
+              rotationSpeed={0.4}
+              glowAmount={0.008}
+              pillarWidth={4.0}
+              pillarHeight={0.6}
+              noiseIntensity={0.3}
+              pillarRotation={0}
+              interactive={false}
+              mixBlendMode="screen"
+            />
+          </div>
+          
           {/* Animated Gradient Mesh Background - Only load when in view */}
           {isIntersecting && (
             <Suspense fallback={<div className="absolute inset-0 bg-gradient-to-br from-violet-900 via-purple-900 to-indigo-900" />}>
               <AnimatedGradientMesh
                 {...getGradientMeshConfig('hero')}
-                className="hero-gradient-mesh"
+                className="hero-gradient-mesh opacity-60"
               />
             </Suspense>
           )}
           
           {/* Gradient Mesh Overlay */}
-          <div className="gradient-mesh-overlay absolute inset-0 bg-black/20" />
+          <div className="gradient-mesh-overlay absolute inset-0 bg-black/30" />
         </div>
 
         {/* Interactive Background Effects - Z-Index 2 */}
@@ -138,30 +155,14 @@ const Home = () => {
             {/* Enhanced Particle System Background */}
             <Suspense fallback={null}>
               <ParticleSystem
-                particleCount={80}
+                particleCount={60}
                 mouseInteraction={true}
-                particleSize={2.5}
-                connectionDistance={120}
-                particleSpeed={0.25}
-                colors={['#7C3AED', '#8B5CF6', '#A855F7', '#C084FC', '#DDD6FE']}
+                particleSize={2.0}
+                connectionDistance={100}
+                particleSpeed={0.2}
+                colors={['#5227FF', '#7C3AED', '#A855F7', '#FF9FFC', '#DDD6FE']}
               />
             </Suspense>
-            
-            {/* Enhanced Orb Background Effect */}
-            <div className="absolute inset-0 opacity-40">
-              <Suspense fallback={null}>
-                <Orb
-                  hoverIntensity={0.6}
-                  rotateOnHover={true}
-                  hue={280}
-                  forceHoverState={false}
-                  backgroundColor="transparent"
-                  colorScheme="violet"
-                  proximityRadius={1.2}
-                  intensityMultiplier={1.4}
-                />
-              </Suspense>
-            </div>
           </div>
         )}
 
