@@ -9,6 +9,7 @@ import RouteTransitionWrapper from '../components/RouteTransitionWrapper';
 import { getGradientStyles } from '../utils/gradients.js';
 import { getGradientMeshConfig } from '../utils/gradientMesh.js';
 import LightPillar from '../components/LightPillar';
+import GradientText from '../components/GradientText';
 import '../styles/animated-gradient-mesh.css';
 import '../styles/crypto-visualizations.css';
 
@@ -172,19 +173,33 @@ const Home = () => {
           {/* Header Text Section - Fixed positioning with higher z-index */}
           <div className="flex-shrink-0 text-center pt-4 md:pt-8 lg:pt-12 pb-2 relative z-20">
             <div className="hidden md:block">
-              <h1 className="text-white text-[52px] lg:text-[72px] xl:text-[88px] font-bold leading-[0.85] tracking-tight drop-shadow-2xl text-shadow-strong">
-                Crypto Payment
-              </h1>
-              <h2 className="text-white text-[52px] lg:text-[72px] xl:text-[88px] font-bold leading-[0.85] tracking-tight -mt-1 drop-shadow-2xl text-shadow-strong">
-                made simple
-              </h2>
+              <GradientText
+                colors={['#5227FF', '#FF9FFC', '#B19EEF', '#7C3AED']}
+                animationSpeed={6}
+                direction="horizontal"
+                pauseOnHover={true}
+                yoyo={true}
+                className="text-[52px] lg:text-[72px] xl:text-[88px] font-bold leading-[0.85] tracking-tight"
+              >
+                <h1 className="text-[52px] lg:text-[72px] xl:text-[88px] font-bold leading-[0.85] tracking-tight">
+                  Crypto Payments<br />made simple
+                </h1>
+              </GradientText>
             </div>
 
             <div className="block md:hidden px-4">
-              <h1 className="text-white text-[30px] xs:text-[34px] sm:text-[38px] font-bold leading-[0.9] drop-shadow-2xl text-shadow-strong">
-                Crypto Payment <br />
-                made simple
-              </h1>
+              <GradientText
+                colors={['#5227FF', '#FF9FFC', '#B19EEF', '#7C3AED']}
+                animationSpeed={6}
+                direction="horizontal"
+                pauseOnHover={true}
+                yoyo={true}
+                className="text-[30px] xs:text-[34px] sm:text-[38px] font-bold leading-[0.9]"
+              >
+                <h1 className="text-[30px] xs:text-[34px] sm:text-[38px] font-bold leading-[0.9]">
+                  Crypto Payments<br />made simple
+                </h1>
+              </GradientText>
             </div>
           </div>
 

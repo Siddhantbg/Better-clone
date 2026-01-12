@@ -8,6 +8,42 @@
     4px 4px 8px rgba(0, 0, 0, 0.6);
 }
 
+/* Glass morphism text effect - From https://css.glass */
+.glass-text {
+  background: rgba(255, 255, 255, 0.44);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  padding: 20px 40px;
+  display: inline-block;
+}
+
+.glass-text h1,
+.glass-text h2 {
+  color: rgba(0, 0, 0, 0.8) !important;
+  text-shadow: none !important;
+  margin: 0;
+}
+
+.glass-text-mobile {
+  background: rgba(255, 255, 255, 0.44);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  padding: 16px 24px;
+  display: inline-block;
+}
+
+.glass-text-mobile h1 {
+  color: rgba(0, 0, 0, 0.8) !important;
+  text-shadow: none !important;
+  margin: 0;
+}
+
 /* Enhanced gradient button with glow */
 .gradient-button-primary {
   background: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #C084FC 100%);
